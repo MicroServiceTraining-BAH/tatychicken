@@ -11,7 +11,7 @@ const navLinks = [
 
 function InstagramIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
     </svg>
   );
@@ -19,16 +19,16 @@ function InstagramIcon() {
 
 function FacebookIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
     </svg>
   );
 }
 
-function DoorDashIcon() {
+function ChickenIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
     </svg>
   );
 }
@@ -40,16 +40,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl" role="img" aria-hidden="true">🍗</span>
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="text-brand-red"><ChickenIcon /></span>
               <span className="font-poppins font-black text-xl">
                 Taty&apos;s{' '}
                 <span className="text-brand-gold">Chicken</span>
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
-              Latin-inspired crispy fried chicken made fresh daily. Your neighborhood&apos;s
-              favorite spot for bold flavor and fast service — now on DoorDash.
+              Latin-inspired crispy fried chicken made fresh daily in Manassas, VA. Your
+              neighborhood&apos;s favorite spot for bold flavor and fast service.
             </p>
 
             {/* Social Icons */}
@@ -59,7 +59,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow Taty's Chicken on Instagram"
-                className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-200"
+                className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-200"
               >
                 <InstagramIcon />
               </a>
@@ -68,18 +68,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow Taty's Chicken on Facebook"
-                className="w-10 h-10 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-200"
+                className="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-200"
               >
                 <FacebookIcon />
-              </a>
-              <a
-                href={siteConfig.doordashLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Order Taty's Chicken on DoorDash"
-                className="w-10 h-10 rounded-full bg-[#FF3008] flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-red-500/30 transition-all duration-200"
-              >
-                <DoorDashIcon />
               </a>
             </div>
 
@@ -87,9 +78,9 @@ export default function Footer() {
               href={siteConfig.doordashLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg"
+              className="inline-flex items-center gap-2 bg-[#FF3008] hover:bg-[#E02000] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg"
             >
-              🛒 Order on DoorDash
+              Order on DoorDash
             </a>
           </div>
 
@@ -116,34 +107,27 @@ export default function Footer() {
           <div>
             <h3 className="font-poppins font-bold text-white mb-5">Hours & Contact</h3>
             <div className="space-y-3 text-sm text-gray-400">
-              <div className="flex items-start gap-2">
-                <span className="mt-0.5">📞</span>
+              <div>
                 <a
                   href={siteConfig.phoneHref}
-                  className="hover:text-brand-gold transition-colors font-medium"
+                  className="hover:text-brand-gold transition-colors font-medium text-base"
                 >
                   {siteConfig.phone}
                 </a>
               </div>
-              <div className="flex items-start gap-2">
-                <span className="mt-0.5">📍</span>
-                <address className="not-italic">{siteConfig.address}</address>
-              </div>
-              <div className="flex items-start gap-2 pt-1">
-                <span className="mt-0.5">🕐</span>
-                <div>
-                  <div>{siteConfig.hours.weekdays}</div>
-                  <div>{siteConfig.hours.weekend}</div>
-                </div>
+              <address className="not-italic">{siteConfig.address}</address>
+              <div className="pt-1 space-y-1">
+                <div>{siteConfig.hours.weekdays}</div>
+                <div>{siteConfig.hours.weekend}</div>
               </div>
               <div className="pt-2">
                 <a
                   href={siteConfig.doordashLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[#FF3008] hover:text-red-400 font-semibold transition-colors"
+                  className="text-[#FF3008] hover:text-red-400 font-semibold transition-colors"
                 >
-                  <span>🛵</span> Order delivery on DoorDash
+                  Delivery via DoorDash →
                 </a>
               </div>
             </div>
@@ -154,33 +138,9 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <p>© {new Date().getFullYear()} Taty&apos;s Chicken · All Rights Reserved</p>
           <div className="flex items-center gap-4">
-            <a
-              href={siteConfig.instagramLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-pink-400 transition-colors"
-              aria-label="Instagram"
-            >
-              Instagram
-            </a>
-            <a
-              href={siteConfig.facebookLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors"
-              aria-label="Facebook"
-            >
-              Facebook
-            </a>
-            <a
-              href={siteConfig.doordashLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-red-400 transition-colors"
-              aria-label="DoorDash"
-            >
-              DoorDash
-            </a>
+            <a href={siteConfig.instagramLink} target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors">Instagram</a>
+            <a href={siteConfig.facebookLink} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">Facebook</a>
+            <a href={siteConfig.doordashLink} target="_blank" rel="noopener noreferrer" className="hover:text-red-400 transition-colors">DoorDash</a>
           </div>
           <p>
             Made by{' '}

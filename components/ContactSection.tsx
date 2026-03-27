@@ -11,6 +11,31 @@ type FormState = {
 
 type SubmitState = 'idle' | 'loading' | 'success' | 'error';
 
+function PhoneIcon() {
+  return (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+    </svg>
+  );
+}
+
+function MapIcon() {
+  return (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+    </svg>
+  );
+}
+
+function ClockIcon() {
+  return (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    </svg>
+  );
+}
+
 export default function ContactSection() {
   const [form, setForm] = useState<FormState>({ name: '', contact: '', message: '' });
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
@@ -18,7 +43,6 @@ export default function ContactSection() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitState('loading');
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setSubmitState('success');
     setForm({ name: '', contact: '', message: '' });
@@ -31,10 +55,9 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 bg-brand-red/10 text-brand-red rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
-            <span>📍</span>
-            <span>Find Us</span>
-          </div>
+          <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-3">
+            Find Us
+          </p>
           <h2 id="contact-heading" className="section-title mb-4">
             Come Visit Us
           </h2>
@@ -45,12 +68,11 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Info */}
-          <div className="flex flex-col gap-8">
-            {/* Contact cards */}
+          <div className="flex flex-col gap-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <div className="text-3xl mb-3">📞</div>
-                <div className="font-poppins font-bold text-brand-dark text-lg mb-1">Call Us</div>
+                <div className="text-brand-red mb-3"><PhoneIcon /></div>
+                <div className="font-poppins font-bold text-brand-dark text-base mb-1">Call Us</div>
                 <a
                   href={siteConfig.phoneHref}
                   className="text-brand-red font-semibold hover:text-brand-red-dark transition-colors text-lg"
@@ -60,17 +82,17 @@ export default function ContactSection() {
               </div>
 
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <div className="text-3xl mb-3">📍</div>
-                <div className="font-poppins font-bold text-brand-dark text-lg mb-1">Location</div>
+                <div className="text-brand-red mb-3"><MapIcon /></div>
+                <div className="font-poppins font-bold text-brand-dark text-base mb-1">Location</div>
                 <address className="not-italic text-gray-600 text-sm leading-relaxed">
                   {siteConfig.address}
                 </address>
               </div>
 
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 sm:col-span-2">
-                <div className="text-3xl mb-3">🕐</div>
-                <div className="font-poppins font-bold text-brand-dark text-lg mb-2">Hours</div>
-                <div className="space-y-1 text-gray-600">
+                <div className="text-brand-red mb-3"><ClockIcon /></div>
+                <div className="font-poppins font-bold text-brand-dark text-base mb-3">Hours</div>
+                <div className="space-y-1.5 text-gray-600">
                   <div className="flex justify-between text-sm">
                     <span className="font-medium">Mon – Sat</span>
                     <span>11:00 AM – 9:00 PM</span>
@@ -84,7 +106,7 @@ export default function ContactSection() {
             </div>
 
             {/* Map */}
-            <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-56">
+            <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-60 flex-1">
               <iframe
                 title="Taty's Chicken location map"
                 src={siteConfig.mapsEmbed}
@@ -109,7 +131,11 @@ export default function ContactSection() {
 
             {submitState === 'success' ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <div className="text-5xl mb-4">✅</div>
+                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                  <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
                 <h4 className="font-poppins font-bold text-xl text-brand-dark mb-2">
                   Message Sent!
                 </h4>
@@ -154,7 +180,7 @@ export default function ContactSection() {
                     id="contact-contact"
                     type="text"
                     required
-                    placeholder="(305) 555-0100 or you@email.com"
+                    placeholder="(703) 555-0100 or you@email.com"
                     value={form.contact}
                     onChange={(e) => setForm((f) => ({ ...f, contact: e.target.value }))}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brand-red focus:outline-none transition-colors text-brand-dark placeholder-gray-400"

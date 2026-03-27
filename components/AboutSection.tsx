@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const stats = [
   { value: '500+', label: 'Happy Customers' },
   { value: 'Daily', label: 'Freshly Made' },
@@ -12,15 +14,11 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-brand-red/10 text-brand-red rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
-              <span>🏠</span>
-              <span>Our Story</span>
-            </div>
+            <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-4">
+              Our Story
+            </p>
 
-            <h2
-              id="about-heading"
-              className="section-title mb-8"
-            >
+            <h2 id="about-heading" className="section-title mb-8">
               A Family Recipe,
               <br />
               <span className="text-brand-red">A Local Legend</span>
@@ -43,10 +41,22 @@ export default function AboutSection() {
               </p>
             </div>
 
+            {/* Trust badges */}
+            <div className="flex flex-wrap gap-2 mt-8 mb-10">
+              {['Never Frozen', 'Made to Order', 'Latin Recipes', 'Family Owned'].map((badge) => (
+                <span
+                  key={badge}
+                  className="bg-white border border-gray-200 text-brand-dark text-sm font-medium px-4 py-1.5 rounded-full"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+
             {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               {stats.map(({ value, label }) => (
-                <div key={label} className="text-center sm:text-left">
+                <div key={label}>
                   <div className="font-poppins font-black text-3xl text-brand-red mb-1">
                     {value}
                   </div>
@@ -56,47 +66,34 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Visual Card */}
-          <div className="relative">
-            {/* Main card */}
-            <div className="relative bg-brand-dark rounded-3xl p-8 md:p-10 overflow-hidden">
-              {/* Background pattern */}
-              <div
-                className="absolute inset-0 opacity-10"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 30% 40%, #C8102E 0%, transparent 60%),
-                                    radial-gradient(circle at 80% 70%, #F5A623 0%, transparent 60%)`,
-                }}
+          {/* Image stack */}
+          <div className="relative h-[500px]">
+            {/* Main image */}
+            <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1598103442097-8b74394b95c2?w=800&q=85"
+                alt="Fresh fried chicken being served at Taty's Chicken"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
-
-              <div className="relative z-10">
-                <div className="text-6xl mb-6" role="img" aria-label="Fried chicken">
-                  🍗
-                </div>
-                <blockquote className="font-poppins font-bold text-2xl md:text-3xl text-white leading-tight mb-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="font-poppins font-bold text-xl text-white leading-snug">
                   &ldquo;Quality You Can Taste — Every Single Bite.&rdquo;
-                </blockquote>
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    'Never Frozen',
-                    'Made to Order',
-                    'Latin Recipes',
-                    'Family Owned',
-                  ].map((badge) => (
-                    <span
-                      key={badge}
-                      className="bg-white/10 text-white text-sm font-medium px-3 py-1.5 rounded-full border border-white/20"
-                    >
-                      {badge}
-                    </span>
-                  ))}
-                </div>
+                </p>
               </div>
             </div>
 
-            {/* Floating accent */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-gold rounded-2xl flex items-center justify-center text-4xl shadow-xl rotate-6">
-              🌶️
+            {/* Floating secondary image */}
+            <div className="absolute -bottom-6 -right-6 w-44 h-44 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
+              <Image
+                src="https://images.unsplash.com/photo-1587778082149-bd5b1bf5d3fa?w=300&q=85"
+                alt="Latin-style sides — rice, beans and plantains"
+                fill
+                className="object-cover"
+                sizes="176px"
+              />
             </div>
           </div>
         </div>
