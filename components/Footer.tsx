@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/lib/metadata';
 
 const navLinks = [
@@ -41,7 +42,15 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <span className="text-brand-red"><ChickenIcon /></span>
+              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
+                <Image
+                  src="/logo.jpg"
+                  alt="Taty's Chicken logo"
+                  width={40}
+                  height={40}
+                  className="object-contain w-9 h-9"
+                />
+              </div>
               <span className="font-poppins font-black text-xl">
                 Taty&apos;s{' '}
                 <span className="text-brand-gold">Chicken</span>

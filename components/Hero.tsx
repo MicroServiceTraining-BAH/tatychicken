@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/lib/metadata';
 
 const trustBadges = [
@@ -32,6 +33,20 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
         <div className="max-w-2xl">
+          {/* Logo */}
+          <div className="mb-6 animate-fade-in">
+            <div className="w-20 h-20 rounded-2xl bg-white/95 backdrop-blur-sm flex items-center justify-center overflow-hidden shadow-xl">
+              <Image
+                src="/logo.jpg"
+                alt="Taty's Chicken"
+                width={72}
+                height={72}
+                className="object-contain w-[68px] h-[68px]"
+                priority
+              />
+            </div>
+          </div>
+
           {/* Eyebrow */}
           <p className="text-brand-gold font-semibold text-sm uppercase tracking-widest mb-5 animate-fade-in">
             Local Favorite · Manassas, VA

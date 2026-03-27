@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '@/lib/metadata';
 
@@ -67,8 +68,17 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group" aria-label="Taty's Chicken Home">
-              <span className="text-2xl" role="img" aria-hidden="true">🍗</span>
+            <Link href="/" className="flex items-center gap-2.5 group" aria-label="Taty's Chicken Home">
+              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm">
+                <Image
+                  src="/logo.jpg"
+                  alt="Taty's Chicken logo"
+                  width={40}
+                  height={40}
+                  className="object-contain w-9 h-9"
+                  priority
+                />
+              </div>
               <span className="font-poppins font-black text-xl text-white tracking-tight">
                 Taty&apos;s{' '}
                 <span className="text-brand-gold">Chicken</span>
