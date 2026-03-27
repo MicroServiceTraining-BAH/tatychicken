@@ -68,16 +68,16 @@ export default function AboutSection() {
 
           {/* Image stack */}
           <div className="relative h-[500px]">
-            {/* Main image */}
-            <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
+            {/* Main image — crispy fried chicken pieces in a pan */}
+            <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl bg-amber-50">
               <Image
-                src="https://images.unsplash.com/photo-1598103442097-8b74394b95c2?w=800&q=85"
-                alt="Fresh fried chicken being served at Taty's Chicken"
+                src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=900&q=85"
+                alt="Crispy fried chicken pieces fresh out of the fryer at Taty's Chicken"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="font-poppins font-bold text-xl text-white leading-snug">
                   &ldquo;Quality You Can Taste — Every Single Bite.&rdquo;
@@ -85,11 +85,11 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Floating secondary image */}
-            <div className="absolute -bottom-6 -right-6 w-44 h-44 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
+            {/* Floating secondary image — chicken sandwich close-up */}
+            <div className="absolute -bottom-6 -right-6 w-44 h-44 rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-amber-50">
               <Image
-                src="https://images.unsplash.com/photo-1587778082149-bd5b1bf5d3fa?w=300&q=85"
-                alt="Latin-style sides — rice, beans and plantains"
+                src="https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?w=400&q=85"
+                alt="Golden fried chicken pieces on a plate"
                 fill
                 className="object-cover"
                 sizes="176px"

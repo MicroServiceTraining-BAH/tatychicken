@@ -3,33 +3,39 @@ import Link from 'next/link';
 
 const galleryImages = [
   {
+    // Fried chicken pieces in basket — confirmed working hero photo
     src: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=800&q=85',
-    alt: 'Crispy golden fried chicken pieces',
+    alt: 'Crispy golden fried chicken pieces in a basket',
     className: 'col-span-2 row-span-2',
   },
   {
-    src: 'https://images.unsplash.com/photo-1569923072541-b4adc1c5c4e9?w=600&q=85',
-    alt: 'Juicy fried chicken close-up',
-    className: '',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c2?w=600&q=85',
-    alt: 'Chicken combo meal with sides',
-    className: '',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=85',
-    alt: 'Fried chicken platter',
-    className: '',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1587778082149-bd5b1bf5d3fa?w=600&q=85',
-    alt: 'Latin-style sides with rice and plantains',
-    className: '',
-  },
-  {
+    // Fried chicken wings with dipping sauce — confirmed from screenshot
     src: 'https://images.unsplash.com/photo-1639024471283-03518883512d?w=600&q=85',
-    alt: 'Crispy chicken wings',
+    alt: 'Crispy fried chicken wings with dipping sauce',
+    className: '',
+  },
+  {
+    // Fried chicken platter — different angle
+    src: 'https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?w=600&q=85',
+    alt: 'Golden fried chicken pieces on a plate',
+    className: '',
+  },
+  {
+    // Overhead food spread — family style
+    src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=85',
+    alt: 'Family-style food spread with chicken and sides',
+    className: '',
+  },
+  {
+    // Crispy chicken sandwich / burger
+    src: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=85',
+    alt: 'Crispy chicken sandwich on a brioche bun',
+    className: '',
+  },
+  {
+    // Chicken close-up / fried food
+    src: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=85',
+    alt: 'Close-up of crispy fried chicken pieces',
     className: '',
   },
 ];
@@ -56,7 +62,7 @@ export default function GallerySection() {
           {galleryImages.map(({ src, alt, className }, idx) => (
             <div
               key={idx}
-              className={`relative overflow-hidden rounded-2xl group cursor-pointer ${className}`}
+              className={`relative overflow-hidden rounded-2xl group cursor-pointer bg-amber-50 ${className}`}
             >
               <Image
                 src={src}
@@ -64,7 +70,7 @@ export default function GallerySection() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, 25vw"
-                loading="lazy"
+                loading={idx === 0 ? 'eager' : 'lazy'}
               />
               <div className="absolute inset-0 bg-brand-dark/0 group-hover:bg-brand-dark/20 transition-all duration-300" />
             </div>
@@ -76,7 +82,7 @@ export default function GallerySection() {
           {galleryImages.map(({ src, alt }, idx) => (
             <div
               key={idx}
-              className="relative aspect-square overflow-hidden rounded-xl group"
+              className="relative aspect-square overflow-hidden rounded-xl group bg-amber-50"
             >
               <Image
                 src={src}
@@ -84,7 +90,7 @@ export default function GallerySection() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="50vw"
-                loading="lazy"
+                loading={idx < 2 ? 'eager' : 'lazy'}
               />
             </div>
           ))}

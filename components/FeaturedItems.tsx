@@ -13,8 +13,9 @@ type FeaturedItem = {
 
 const items: FeaturedItem[] = [
   {
+    // Crispy fried chicken pieces in a basket — confirmed food photo
     image: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=85',
-    alt: 'Classic fried chicken combo with fries and drink',
+    alt: 'Classic fried chicken combo with crispy pieces, seasoned fries and a drink',
     name: 'Classic Combo',
     description:
       'Our signature crispy golden chicken with seasoned fries and a refreshing drink. The crowd favorite for a reason.',
@@ -23,8 +24,9 @@ const items: FeaturedItem[] = [
     tagColor: 'bg-brand-red text-white',
   },
   {
-    image: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=85',
-    alt: 'Family feast platter with multiple pieces of fried chicken',
+    // Overhead food spread — family platter style
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=85',
+    alt: 'Family feast platter with multiple fried chicken pieces and sides',
     name: 'Family Feast',
     description:
       '8 crispy pieces, 2 large sides, and 4 drinks. The ultimate spread to feed your whole crew without breaking the bank.',
@@ -33,8 +35,9 @@ const items: FeaturedItem[] = [
     tagColor: 'bg-brand-gold text-brand-dark',
   },
   {
-    image: 'https://images.unsplash.com/photo-1569923072541-b4adc1c5c4e9?w=600&q=85',
-    alt: 'Latin spicy chicken box with rice and plantains',
+    // Spiced/marinated chicken with rice — Latin food style
+    image: 'https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?w=600&q=85',
+    alt: 'Latin spicy chicken box with rice, beans and sweet fried plantains',
     name: 'Latin Spicy Box',
     description:
       'Marinated hot chicken with Latin rice & beans and sweet fried plantains. Bold, authentic, unforgettable.',
@@ -43,8 +46,9 @@ const items: FeaturedItem[] = [
     tagColor: 'bg-orange-500 text-white',
   },
   {
-    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=85',
-    alt: 'Crispy chicken sandwich on a toasted brioche bun',
+    // Classic burger/chicken sandwich close-up — famous Unsplash food photo
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=85',
+    alt: 'Crispy chicken sandwich on a toasted brioche bun with house sauce',
     name: 'Chicken Sandwich',
     description:
       'Crispy golden fillet on a toasted brioche bun with our house sauce. Satisfaction in every bite.',
@@ -76,7 +80,7 @@ export default function FeaturedItems() {
           {items.map(({ image, alt, name, description, price, tag, tagColor }) => (
             <article key={name} className="card group flex flex-col overflow-hidden">
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden bg-amber-50">
                 <Image
                   src={image}
                   alt={alt}

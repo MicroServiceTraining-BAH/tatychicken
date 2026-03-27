@@ -10,8 +10,8 @@ export default function DeliveryBanner() {
       {/* Full-bleed background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=1920&q=80"
-          alt="Crispy fried chicken wings ready for delivery"
+          src="https://images.unsplash.com/photo-1562967914-608f82629710?w=1920&q=80"
+          alt="Crispy golden fried chicken pieces ready for delivery"
           fill
           className="object-cover"
           sizes="100vw"
@@ -71,8 +71,8 @@ export default function DeliveryBanner() {
             >
               <div className="relative h-32 mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=85"
-                  alt="Crispy fried chicken"
+                  src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&q=85"
+                  alt="Crispy fried chicken wings with dipping sauce"
                   fill
                   className="object-cover"
                   sizes="280px"

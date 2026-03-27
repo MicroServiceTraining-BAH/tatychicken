@@ -10,49 +10,58 @@ export const metadata: Metadata = {
 
 const images = [
   {
-    src: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=800&q=80',
-    alt: 'Crispy golden fried chicken pieces stacked high',
+    // Fried chicken pieces in a basket — hero confirmed
+    src: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=800&q=85',
+    alt: 'Crispy golden fried chicken pieces in a basket',
     caption: 'Crispy Chicken',
   },
   {
-    src: 'https://images.unsplash.com/photo-1569923072541-b4adc1c5c4e9?w=800&q=80',
-    alt: 'Juicy fried chicken close-up showing the golden crust',
-    caption: 'Golden Crust',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c2?w=800&q=80',
-    alt: 'Full chicken combo meal with sides and a drink',
-    caption: 'Combo Meal',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=800&q=80',
-    alt: 'Family-style fried chicken platter with multiple pieces',
-    caption: 'Family Platter',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1587778082149-bd5b1bf5d3fa?w=800&q=80',
-    alt: 'Latin-style sides including rice and fried plantains',
-    caption: 'Latin Sides',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1639024471283-03518883512d?w=800&q=80',
-    alt: 'Crispy fried chicken wings close-up',
+    // Wings with dipping sauce — confirmed from screenshot
+    src: 'https://images.unsplash.com/photo-1639024471283-03518883512d?w=800&q=85',
+    alt: 'Crispy fried chicken wings with dipping sauce',
     caption: 'Crispy Wings',
   },
   {
-    src: 'https://images.unsplash.com/photo-1615361200141-f45040f367be?w=800&q=80',
-    alt: 'Chicken sandwich on a brioche bun with house sauce',
+    // Fried chicken plate — different shot
+    src: 'https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?w=800&q=85',
+    alt: 'Golden fried chicken pieces arranged on a plate',
+    caption: 'Golden Crust',
+  },
+  {
+    // Overhead food spread — family style
+    src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=85',
+    alt: 'Overhead view of a generous family-style food spread',
+    caption: 'Family Platter',
+  },
+  {
+    // Fried chicken close-up
+    src: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=800&q=85',
+    alt: 'Close-up of crispy seasoned fried chicken',
+    caption: 'Seasoned & Crispy',
+  },
+  {
+    // Chicken sandwich / burger
+    src: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=85',
+    alt: 'Juicy chicken sandwich on a toasted brioche bun',
     caption: 'Chicken Sandwich',
   },
   {
-    src: 'https://images.unsplash.com/photo-1606728035253-49e8a23146de?w=800&q=80',
-    alt: 'Basket of crispy french fries with seasoning',
+    // Food spread / combo meal
+    src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85',
+    alt: 'Restaurant-style chicken combo meal',
+    caption: 'Combo Meal',
+  },
+  {
+    // Fries / side dish
+    src: 'https://images.unsplash.com/photo-1516685018646-549198525c1b?w=800&q=85',
+    alt: 'Crispy seasoned french fries with dipping sauce',
     caption: 'Seasoned Fries',
   },
   {
-    src: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&q=80',
-    alt: 'Refreshing lemonade with chicken meal',
-    caption: 'Fresh Lemonade',
+    // Cold drink / lemonade
+    src: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=800&q=85',
+    alt: 'Refreshing cold drink to go with your meal',
+    caption: 'Fresh Drinks',
   },
 ];
 
@@ -62,10 +71,9 @@ export default function GalleryPage() {
       {/* Page Hero */}
       <div className="pt-16 md:pt-20 bg-brand-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 text-center">
-          <div className="inline-flex items-center gap-2 bg-brand-gold/20 text-brand-gold rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
-            <span>📸</span>
-            <span>The Food Speaks for Itself</span>
-          </div>
+          <p className="text-brand-gold font-semibold text-sm uppercase tracking-widest mb-4">
+            The Food Speaks for Itself
+          </p>
           <h1 className="font-poppins font-black text-4xl md:text-5xl lg:text-6xl text-white mb-4">
             Food Gallery
           </h1>
@@ -82,7 +90,7 @@ export default function GalleryPage() {
             {images.map(({ src, alt, caption }, idx) => (
               <div
                 key={idx}
-                className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-sm border border-gray-100 cursor-pointer"
+                className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-sm border border-gray-100 cursor-pointer bg-amber-50"
               >
                 <Image
                   src={src}
@@ -101,21 +109,19 @@ export default function GalleryPage() {
 
           {/* CTA */}
           <div className="text-center mt-16">
-            <p className="text-gray-500 text-lg mb-6">
-              Ready to taste it for yourself?
-            </p>
+            <p className="text-gray-500 text-lg mb-6">Ready to taste it for yourself?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/menu"
                 className="inline-flex items-center gap-2 bg-brand-red text-white font-bold px-8 py-4 rounded-full hover:bg-brand-red-dark transition-all duration-200 hover:shadow-xl hover:scale-105 active:scale-95"
               >
-                🍗 View Our Menu
+                View Our Menu
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 border-2 border-brand-dark text-brand-dark font-bold px-8 py-4 rounded-full hover:bg-brand-dark hover:text-white transition-all duration-200"
               >
-                📍 Find Us
+                Find Us
               </Link>
             </div>
           </div>
