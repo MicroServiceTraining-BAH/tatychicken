@@ -7,20 +7,23 @@ const actions = [
     sublabel: siteConfig.phone,
     href: siteConfig.phoneHref,
     description: 'Place your order by phone',
+    external: false,
   },
   {
     icon: '📍',
     label: 'Get Directions',
-    sublabel: 'Find us on the map',
+    sublabel: 'Manassas, VA',
     href: siteConfig.mapsLink,
     description: 'Navigate to our location',
+    external: true,
   },
   {
-    icon: '🛒',
-    label: 'Order Online',
-    sublabel: 'Fast & easy pickup',
-    href: siteConfig.orderLink,
-    description: 'Order online for pickup',
+    icon: '🛵',
+    label: 'Order on DoorDash',
+    sublabel: 'Fast delivery to your door',
+    href: siteConfig.doordashLink,
+    description: 'Order delivery on DoorDash',
+    external: true,
   },
 ];
 
@@ -29,12 +32,12 @@ export default function QuickActions() {
     <section className="bg-brand-dark py-4" aria-label="Quick actions">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden">
-          {actions.map(({ icon, label, sublabel, href, description }) => (
+          {actions.map(({ icon, label, sublabel, href, description, external }) => (
             <a
               key={label}
               href={href}
-              target={href.startsWith('http') ? '_blank' : undefined}
-              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
               aria-label={description}
               className="group flex items-center gap-4 bg-brand-dark px-6 py-5 hover:bg-white/5 transition-all duration-300"
             >
