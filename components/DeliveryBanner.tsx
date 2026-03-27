@@ -7,17 +7,22 @@ export default function DeliveryBanner() {
       className="relative overflow-hidden"
       aria-labelledby="delivery-heading"
     >
-      {/* Full-bleed background image */}
+      {/* Background image — dimmed heavily so text stays legible */}
       <div className="absolute inset-0">
         <Image
           src="https://images.unsplash.com/photo-1562967914-608f82629710?w=1920&q=80"
           alt="Crispy golden fried chicken pieces ready for delivery"
           fill
-          className="object-cover"
+          className="object-cover opacity-25"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#C01800]/97 via-[#E02000]/90 to-[#C01800]/70" />
       </div>
+
+      {/* Solid dark red base — guarantees contrast on all devices */}
+      <div className="absolute inset-0 bg-[#B50F1E]" />
+
+      {/* Subtle vignette: left fully opaque, right lets image peek through */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#9B0D1A] via-[#B50F1E]/95 to-[#B50F1E]/80" />
 
       {/* Diagonal stripe texture */}
       <div
@@ -39,7 +44,6 @@ export default function DeliveryBanner() {
             <h2
               id="delivery-heading"
               className="font-poppins font-black text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-5"
-              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.3)' }}
             >
               Hot Chicken,
               <br />
@@ -56,7 +60,7 @@ export default function DeliveryBanner() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Order on DoorDash"
-              className="group inline-flex items-center gap-3 bg-white text-[#E02000] font-black text-xl px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-black/30 active:scale-95"
+              className="group inline-flex items-center gap-3 bg-white text-[#B50F1E] font-black text-xl px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-black/30 active:scale-95"
             >
               Order on DoorDash
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -67,7 +71,7 @@ export default function DeliveryBanner() {
           <div className="flex-shrink-0 w-full max-w-xs">
             <div
               className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 text-center"
-              style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.25)' }}
+              style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}
             >
               <div className="relative h-32 mb-6 rounded-xl overflow-hidden">
                 <Image
