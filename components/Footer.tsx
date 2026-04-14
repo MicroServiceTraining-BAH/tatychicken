@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { siteConfig } from '@/lib/metadata';
 import { useLanguage } from '@/lib/language-context';
-import OrderButton from './OrderButton';
 
 function InstagramIcon() {
   return (
@@ -80,9 +79,14 @@ export default function Footer() {
               </a>
             </div>
 
-            <OrderButton className="gap-2 bg-[#FF3008] hover:bg-[#E02000] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg">
+            <a
+              href={siteConfig.doordashLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-brand-red/30"
+            >
               {t.footer.orderOnDoorDash}
-            </OrderButton>
+            </a>
           </div>
 
           {/* Navigation */}
@@ -126,7 +130,7 @@ export default function Footer() {
                   href={siteConfig.doordashLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#FF3008] hover:text-red-400 font-semibold transition-colors"
+                  className="text-brand-red hover:text-brand-red-light font-semibold transition-colors"
                 >
                   {t.footer.deliveryLink}
                 </a>
