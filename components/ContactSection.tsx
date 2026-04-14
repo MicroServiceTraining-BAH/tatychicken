@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import { siteConfig } from '@/lib/metadata';
+import { useLanguage } from '@/lib/language-context';
 
 type FormState = {
   name: string;
@@ -37,6 +38,7 @@ function ClockIcon() {
 }
 
 export default function ContactSection() {
+  const { t } = useLanguage();
   const [form, setForm] = useState<FormState>({ name: '', contact: '', message: '' });
   const [submitState, setSubmitState] = useState<SubmitState>('idle');
 
@@ -56,13 +58,13 @@ export default function ContactSection() {
         {/* Header */}
         <div className="text-center mb-14">
           <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-3">
-            Find Us
+            {t.contact.eyebrow}
           </p>
           <h2 id="contact-heading" className="section-title mb-4">
-            Come Visit Us
+            {t.contact.heading}
           </h2>
           <p className="section-subtitle mx-auto text-center">
-            We&apos;re ready to serve you. Stop in or give us a call.
+            {t.contact.subtitle}
           </p>
         </div>
 
@@ -72,7 +74,7 @@ export default function ContactSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
                 <div className="text-brand-red mb-3"><PhoneIcon /></div>
-                <div className="font-poppins font-bold text-brand-dark text-base mb-1">Call Us</div>
+                <div className="font-poppins font-bold text-brand-dark text-base mb-1">{t.contact.callUsHeading}</div>
                 <a
                   href={siteConfig.phoneHref}
                   className="text-brand-red font-semibold hover:text-brand-red-dark transition-colors text-lg"
@@ -83,7 +85,7 @@ export default function ContactSection() {
 
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
                 <div className="text-brand-red mb-3"><MapIcon /></div>
-                <div className="font-poppins font-bold text-brand-dark text-base mb-1">Location</div>
+                <div className="font-poppins font-bold text-brand-dark text-base mb-1">{t.contact.locationHeading}</div>
                 <address className="not-italic text-gray-600 text-sm leading-relaxed">
                   {siteConfig.address}
                 </address>
@@ -91,15 +93,15 @@ export default function ContactSection() {
 
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 sm:col-span-2">
                 <div className="text-brand-red mb-3"><ClockIcon /></div>
-                <div className="font-poppins font-bold text-brand-dark text-base mb-3">Hours</div>
+                <div className="font-poppins font-bold text-brand-dark text-base mb-3">{t.contact.hoursHeading}</div>
                 <div className="space-y-1.5 text-gray-600">
                   <div className="flex justify-between text-sm">
-                    <span className="font-medium">Mon – Sat</span>
-                    <span>11:00 AM – 9:00 PM</span>
+                    <span className="font-medium">{t.contact.monSat}</span>
+                    <span>{t.contact.monSatHours}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="font-medium">Sunday</span>
-                    <span>12:00 PM – 8:00 PM</span>
+                    <span className="font-medium">{t.contact.sunday}</span>
+                    <span>{t.contact.sundayHours}</span>
                   </div>
                 </div>
               </div>
@@ -108,7 +110,7 @@ export default function ContactSection() {
             {/* Map */}
             <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-60 flex-1">
               <iframe
-                title="Taty's Chicken location map"
+                title={t.contact.mapTitle}
                 src={siteConfig.mapsEmbed}
                 width="100%"
                 height="100%"
@@ -123,10 +125,10 @@ export default function ContactSection() {
           {/* Form */}
           <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
             <h3 className="font-poppins font-bold text-2xl text-brand-dark mb-2">
-              Send a Message
+              {t.contact.formHeading}
             </h3>
             <p className="text-gray-500 text-sm mb-8">
-              For catering inquiries, feedback, or questions. We&apos;ll get back to you quickly.
+              {t.contact.formSubtitle}
             </p>
 
             {submitState === 'success' ? (
@@ -137,16 +139,16 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <h4 className="font-poppins font-bold text-xl text-brand-dark mb-2">
-                  Message Sent!
+                  {t.contact.successHeading}
                 </h4>
                 <p className="text-gray-500">
-                  Thanks for reaching out. We&apos;ll be in touch soon.
+                  {t.contact.successBody}
                 </p>
                 <button
                   onClick={() => setSubmitState('idle')}
                   className="mt-6 text-brand-red font-semibold hover:text-brand-red-dark transition-colors"
                 >
-                  Send another message
+                  {t.contact.sendAnother}
                 </button>
               </div>
             ) : (
@@ -156,13 +158,13 @@ export default function ContactSection() {
                     htmlFor="contact-name"
                     className="block text-sm font-semibold text-brand-dark mb-2"
                   >
-                    Your Name <span className="text-brand-red">*</span>
+                    {t.contact.nameLabel} <span className="text-brand-red">*</span>
                   </label>
                   <input
                     id="contact-name"
                     type="text"
                     required
-                    placeholder="Maria Rodriguez"
+                    placeholder={t.contact.namePlaceholder}
                     value={form.name}
                     onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brand-red focus:outline-none transition-colors text-brand-dark placeholder-gray-400"
@@ -174,13 +176,13 @@ export default function ContactSection() {
                     htmlFor="contact-contact"
                     className="block text-sm font-semibold text-brand-dark mb-2"
                   >
-                    Phone or Email <span className="text-brand-red">*</span>
+                    {t.contact.contactLabel} <span className="text-brand-red">*</span>
                   </label>
                   <input
                     id="contact-contact"
                     type="text"
                     required
-                    placeholder="(703) 555-0100 or you@email.com"
+                    placeholder={t.contact.contactPlaceholder}
                     value={form.contact}
                     onChange={(e) => setForm((f) => ({ ...f, contact: e.target.value }))}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brand-red focus:outline-none transition-colors text-brand-dark placeholder-gray-400"
@@ -192,13 +194,13 @@ export default function ContactSection() {
                     htmlFor="contact-message"
                     className="block text-sm font-semibold text-brand-dark mb-2"
                   >
-                    Message <span className="text-brand-red">*</span>
+                    {t.contact.messageLabel} <span className="text-brand-red">*</span>
                   </label>
                   <textarea
                     id="contact-message"
                     required
                     rows={4}
-                    placeholder="Tell us about your catering needs or ask us anything..."
+                    placeholder={t.contact.messagePlaceholder}
                     value={form.message}
                     onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brand-red focus:outline-none transition-colors text-brand-dark placeholder-gray-400 resize-none"
@@ -211,7 +213,7 @@ export default function ContactSection() {
                   className="w-full bg-brand-red hover:bg-brand-red-dark disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl transition-all duration-200 hover:shadow-lg active:scale-[0.98] min-h-[56px]"
                   aria-busy={submitState === 'loading'}
                 >
-                  {submitState === 'loading' ? 'Sending your message...' : 'Send Message'}
+                  {submitState === 'loading' ? t.contact.submitLoading : t.contact.submitIdle}
                 </button>
               </form>
             )}

@@ -1,28 +1,7 @@
-import { siteConfig } from '@/lib/metadata';
+'use client';
 
-const actions = [
-  {
-    label: 'Call Now',
-    sublabel: siteConfig.phone,
-    href: siteConfig.phoneHref,
-    description: 'Place your order by phone',
-    external: false,
-  },
-  {
-    label: 'Get Directions',
-    sublabel: 'Manassas, VA',
-    href: siteConfig.mapsLink,
-    description: 'Navigate to our location',
-    external: true,
-  },
-  {
-    label: 'Order on DoorDash',
-    sublabel: 'Fast delivery to your door',
-    href: siteConfig.doordashLink,
-    description: 'Order delivery on DoorDash',
-    external: true,
-  },
-];
+import { siteConfig } from '@/lib/metadata';
+import { useLanguage } from '@/lib/language-context';
 
 function PhoneIcon() {
   return (
@@ -52,6 +31,32 @@ function BagIcon() {
 const icons = [PhoneIcon, MapIcon, BagIcon];
 
 export default function QuickActions() {
+  const { t } = useLanguage();
+
+  const actions = [
+    {
+      label: t.quickActions.callLabel,
+      sublabel: siteConfig.phone,
+      href: siteConfig.phoneHref,
+      description: t.quickActions.callDescription,
+      external: false,
+    },
+    {
+      label: t.quickActions.directionsLabel,
+      sublabel: t.quickActions.directionsSublabel,
+      href: siteConfig.mapsLink,
+      description: t.quickActions.directionsDescription,
+      external: true,
+    },
+    {
+      label: t.quickActions.doordashLabel,
+      sublabel: t.quickActions.doordashSublabel,
+      href: siteConfig.doordashLink,
+      description: t.quickActions.doordashDescription,
+      external: true,
+    },
+  ];
+
   return (
     <section className="bg-brand-dark py-4" aria-label="Quick actions">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

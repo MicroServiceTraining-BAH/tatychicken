@@ -1,39 +1,36 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/language-context';
 
 const galleryImages = [
   {
-    // Fried chicken pieces in basket — confirmed working hero photo
     src: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=800&q=85',
     alt: 'Crispy golden fried chicken pieces in a basket',
     className: 'col-span-2 row-span-2',
   },
   {
-    // Fried chicken wings with dipping sauce — confirmed from screenshot
     src: 'https://images.unsplash.com/photo-1639024471283-03518883512d?w=600&q=85',
     alt: 'Crispy fried chicken wings with dipping sauce',
     className: '',
   },
   {
-    // Fried chicken platter — different angle
     src: 'https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?w=600&q=85',
     alt: 'Golden fried chicken pieces on a plate',
     className: '',
   },
   {
-    // Overhead food spread — family style
     src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=85',
     alt: 'Family-style food spread with chicken and sides',
     className: '',
   },
   {
-    // Crispy chicken sandwich / burger
     src: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=85',
     alt: 'Crispy chicken sandwich on a brioche bun',
     className: '',
   },
   {
-    // Chicken close-up / fried food
     src: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=85',
     alt: 'Close-up of crispy fried chicken pieces',
     className: '',
@@ -41,19 +38,21 @@ const galleryImages = [
 ];
 
 export default function GallerySection() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 md:py-28 bg-brand-cream" aria-labelledby="gallery-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
           <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-3">
-            Fresh Out the Fryer
+            {t.gallery.eyebrow}
           </p>
           <h2 id="gallery-heading" className="section-title mb-4">
-            See What We&apos;re Cooking
+            {t.gallery.heading}
           </h2>
           <p className="section-subtitle mx-auto text-center">
-            Every plate is made with love. Take a look at what&apos;s waiting for you.
+            {t.gallery.subtitle}
           </p>
         </div>
 
@@ -102,7 +101,7 @@ export default function GallerySection() {
             href="/gallery"
             className="inline-flex items-center gap-2 border-2 border-brand-dark text-brand-dark font-bold px-8 py-4 rounded-full hover:bg-brand-dark hover:text-white transition-all duration-300 hover:scale-105"
           >
-            View Full Gallery →
+            {t.gallery.viewFullGallery}
           </Link>
         </div>
       </div>

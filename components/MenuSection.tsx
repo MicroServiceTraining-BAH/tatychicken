@@ -3,8 +3,12 @@
 import { useState } from 'react';
 import { menuItems, categories, type MenuCategory } from '@/lib/menu-data';
 import { siteConfig } from '@/lib/metadata';
+import { useLanguage } from '@/lib/language-context';
+
+type ItemTranslation = { name: string; description: string };
 
 export default function MenuSection() {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<MenuCategory | 'all'>('all');
 
   const filtered =
@@ -12,19 +16,22 @@ export default function MenuSection() {
       ? menuItems
       : menuItems.filter((item) => item.category === activeCategory);
 
+  const categoryTranslations = t.menu.categories as Record<string, string>;
+  const itemTranslations = t.menu.items as Record<string, ItemTranslation>;
+
   return (
     <section className="py-20 md:py-28 bg-brand-cream" aria-labelledby="menu-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-3">
-            What We Serve
+            {t.menu.eyebrow}
           </p>
           <h2 id="menu-heading" className="section-title mb-4">
-            Our Menu
+            {t.menu.heading}
           </h2>
           <p className="section-subtitle mx-auto text-center">
-            Everything made fresh, every day. Pick your favorites.
+            {t.menu.subtitle}
           </p>
         </div>
 
@@ -32,9 +39,9 @@ export default function MenuSection() {
         <div
           className="flex gap-2 overflow-x-auto pb-2 mb-10 scrollbar-none"
           role="tablist"
-          aria-label="Menu categories"
+          aria-label={t.menu.categoriesAriaLabel}
         >
-          {categories.map(({ id, label }) => (
+          {categories.map(({ id, emoji }) => (
             <button
               key={id}
               role="tab"
@@ -47,7 +54,7 @@ export default function MenuSection() {
                   : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
               }`}
             >
-              {label}
+              {emoji} {categoryTranslations[id] ?? id}
             </button>
           ))}
         </div>
@@ -56,51 +63,56 @@ export default function MenuSection() {
         <div
           id={`menu-panel-${activeCategory}`}
           role="tabpanel"
-          aria-label={`${activeCategory} menu items`}
+          aria-label={`${categoryTranslations[activeCategory] ?? activeCategory} menu items`}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
-          {filtered.map((item) => (
-            <article key={item.id} className="card group p-5 flex items-start gap-4">
-              {/* Color-coded category dot */}
-              <div className="flex-shrink-0 w-10 h-10 bg-brand-muted rounded-xl flex items-center justify-center mt-0.5">
-                <span className="w-3 h-3 rounded-full bg-brand-red opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-start justify-between gap-2 mb-1">
-                  <h3 className="font-poppins font-bold text-brand-dark text-base leading-tight">
-                    {item.name}
-                  </h3>
-                  <div className="flex flex-col items-end gap-1 flex-shrink-0">
-                    <span className="font-poppins font-black text-brand-red text-base whitespace-nowrap">
-                      {item.price}
-                    </span>
-                    {item.popular && (
-                      <span className="text-xs bg-brand-gold/20 text-brand-gold-dark font-semibold px-2 py-0.5 rounded-full whitespace-nowrap">
-                        Popular
-                      </span>
-                    )}
-                    {item.spicy && (
-                      <span className="text-xs bg-orange-100 text-orange-700 font-semibold px-2 py-0.5 rounded-full whitespace-nowrap">
-                        Spicy
-                      </span>
-                    )}
-                  </div>
+          {filtered.map((item) => {
+            const tr = itemTranslations[item.id];
+            const name = tr?.name ?? item.name;
+            const description = tr?.description ?? item.description;
+            return (
+              <article key={item.id} className="card group p-5 flex items-start gap-4">
+                {/* Color-coded category dot */}
+                <div className="flex-shrink-0 w-10 h-10 bg-brand-muted rounded-xl flex items-center justify-center mt-0.5">
+                  <span className="w-3 h-3 rounded-full bg-brand-red opacity-70 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
-                  {item.description}
-                </p>
-              </div>
-            </article>
-          ))}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <h3 className="font-poppins font-bold text-brand-dark text-base leading-tight">
+                      {name}
+                    </h3>
+                    <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                      <span className="font-poppins font-black text-brand-red text-base whitespace-nowrap">
+                        {item.price}
+                      </span>
+                      {item.popular && (
+                        <span className="text-xs bg-brand-gold/20 text-brand-gold-dark font-semibold px-2 py-0.5 rounded-full whitespace-nowrap">
+                          {t.menu.popular}
+                        </span>
+                      )}
+                      {item.spicy && (
+                        <span className="text-xs bg-orange-100 text-orange-700 font-semibold px-2 py-0.5 rounded-full whitespace-nowrap">
+                          {t.menu.spicy}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
+                    {description}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         {/* Call CTA */}
         <div className="mt-14 bg-brand-dark rounded-3xl p-8 md:p-10 text-center">
           <h3 className="font-poppins font-bold text-2xl text-white mb-2">
-            Want to Order by Phone?
+            {t.menu.phoneCtaHeading}
           </h3>
           <p className="text-gray-400 mb-6">
-            Our team is ready to take your order. Call us and we&apos;ll have it hot and ready.
+            {t.menu.phoneCtaBody}
           </p>
           <a
             href={siteConfig.phoneHref}

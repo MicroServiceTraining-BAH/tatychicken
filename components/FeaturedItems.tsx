@@ -1,77 +1,63 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLanguage } from '@/lib/language-context';
 
-type FeaturedItem = {
+type BaseItem = {
   image: string;
   alt: string;
-  name: string;
-  description: string;
-  price: string;
-  tag: string;
   tagColor: string;
 };
 
-const items: FeaturedItem[] = [
+const baseItems: BaseItem[] = [
   {
-    // Crispy fried chicken pieces in a basket — confirmed food photo
     image: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=85',
     alt: 'Classic fried chicken combo with crispy pieces, seasoned fries and a drink',
-    name: 'Classic Combo',
-    description:
-      'Our signature crispy golden chicken with seasoned fries and a refreshing drink. The crowd favorite for a reason.',
-    price: 'From $8.99',
-    tag: '#1 Best Seller',
     tagColor: 'bg-brand-red text-white',
   },
   {
-    // Overhead food spread — family platter style
     image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=85',
     alt: 'Family feast platter with multiple fried chicken pieces and sides',
-    name: 'Family Feast',
-    description:
-      '8 crispy pieces, 2 large sides, and 4 drinks. The ultimate spread to feed your whole crew without breaking the bank.',
-    price: 'From $34.99',
-    tag: 'Best Value',
     tagColor: 'bg-brand-gold text-brand-dark',
   },
   {
-    // Spiced/marinated chicken with rice — Latin food style
     image: 'https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?w=600&q=85',
     alt: 'Latin spicy chicken box with rice, beans and sweet fried plantains',
-    name: 'Latin Spicy Box',
-    description:
-      'Marinated hot chicken with Latin rice & beans and sweet fried plantains. Bold, authentic, unforgettable.',
-    price: 'From $11.99',
-    tag: 'Fan Favorite',
     tagColor: 'bg-orange-500 text-white',
   },
   {
-    // Classic burger/chicken sandwich close-up — famous Unsplash food photo
     image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=85',
     alt: 'Crispy chicken sandwich on a toasted brioche bun with house sauce',
-    name: 'Chicken Sandwich',
-    description:
-      'Crispy golden fillet on a toasted brioche bun with our house sauce. Satisfaction in every bite.',
-    price: 'From $7.99',
-    tag: 'Must Try',
     tagColor: 'bg-emerald-600 text-white',
   },
 ];
 
 export default function FeaturedItems() {
+  const { t } = useLanguage();
+
+  const itemTranslations = [
+    t.featured.item1,
+    t.featured.item2,
+    t.featured.item3,
+    t.featured.item4,
+  ];
+
+  const items = baseItems.map((base, i) => ({ ...base, ...itemTranslations[i] }));
+
   return (
     <section className="py-20 md:py-28 bg-brand-cream" aria-labelledby="featured-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
           <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-3">
-            Fan Favorites
+            {t.featured.eyebrow}
           </p>
           <h2 id="featured-heading" className="section-title mb-4">
-            Order What Everyone Loves
+            {t.featured.heading}
           </h2>
           <p className="section-subtitle mx-auto text-center">
-            Tried-and-true hits that keep our customers coming back for more.
+            {t.featured.subtitle}
           </p>
         </div>
 
@@ -106,7 +92,7 @@ export default function FeaturedItems() {
                     className="text-sm font-semibold text-brand-red hover:text-brand-red-dark transition-colors"
                     aria-label={`View ${name} details`}
                   >
-                    View →
+                    {t.featured.viewDetails}
                   </Link>
                 </div>
               </div>
@@ -120,7 +106,7 @@ export default function FeaturedItems() {
             href="/menu"
             className="inline-flex items-center gap-2 bg-brand-dark text-white font-bold px-8 py-4 rounded-full hover:bg-brand-red transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95"
           >
-            View Full Menu →
+            {t.featured.viewFullMenu}
           </Link>
         </div>
       </div>

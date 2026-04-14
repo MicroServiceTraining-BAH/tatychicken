@@ -5,14 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '@/lib/metadata';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/menu', label: 'Menu' },
-  { href: '/about', label: 'About' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/contact', label: 'Contact' },
-];
+import { useLanguage } from '@/lib/language-context';
 
 function InstagramIcon() {
   return (
@@ -34,6 +27,15 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t, lang, toggle } = useLanguage();
+
+  const navLinks = [
+    { href: '/', label: t.nav.home },
+    { href: '/menu', label: t.nav.menu },
+    { href: '/about', label: t.nav.about },
+    { href: '/gallery', label: t.nav.gallery },
+    { href: '/contact', label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -68,11 +70,11 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 group" aria-label="Taty's Chicken Home">
+            <Link href="/" className="flex items-center gap-2.5 group" aria-label={t.nav.logoAriaLabel}>
               <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm">
                 <Image
                   src="/logo.jpg"
-                  alt="Taty's Chicken logo"
+                  alt={t.nav.logoAlt}
                   width={40}
                   height={40}
                   className="object-contain w-9 h-9"
@@ -109,7 +111,7 @@ export default function Navbar() {
                 href={siteConfig.instagramLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram"
+                aria-label={t.nav.instagramAriaLabel}
                 className="text-gray-400 hover:text-pink-400 transition-colors p-1.5"
               >
                 <InstagramIcon />
@@ -118,13 +120,22 @@ export default function Navbar() {
                 href={siteConfig.facebookLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
+                aria-label={t.nav.facebookAriaLabel}
                 className="text-gray-400 hover:text-blue-400 transition-colors p-1.5"
               >
                 <FacebookIcon />
               </a>
 
               <div className="w-px h-5 bg-white/20 mx-1" />
+
+              {/* Language toggle */}
+              <button
+                onClick={toggle}
+                className="text-gray-300 hover:text-white font-bold text-sm px-3 py-1.5 rounded-full border border-white/20 hover:border-white/40 transition-all duration-200"
+                aria-label={`Switch to ${lang === 'en' ? 'Spanish' : 'English'}`}
+              >
+                {t.nav.toggleLang}
+              </button>
 
               {/* DoorDash CTA */}
               <a
@@ -133,35 +144,44 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-[#FF3008] hover:bg-[#E02000] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-red-600/40 hover:scale-105 active:scale-95"
               >
-                🛵 Order Delivery
+                {t.nav.orderDelivery}
               </a>
             </div>
 
-            {/* Mobile Hamburger */}
-            <button
-              className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-expanded={menuOpen}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            >
-              <div className="w-6 h-5 flex flex-col justify-between">
-                <span
-                  className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center ${
-                    menuOpen ? 'rotate-45 translate-y-2' : ''
-                  }`}
-                />
-                <span
-                  className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 ${
-                    menuOpen ? 'opacity-0 scale-x-0' : ''
-                  }`}
-                />
-                <span
-                  className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center ${
-                    menuOpen ? '-rotate-45 -translate-y-2.5' : ''
-                  }`}
-                />
-              </div>
-            </button>
+            {/* Mobile right: lang toggle + hamburger */}
+            <div className="md:hidden flex items-center gap-2">
+              <button
+                onClick={toggle}
+                className="text-gray-300 hover:text-white font-bold text-xs px-2.5 py-1 rounded-full border border-white/20 hover:border-white/40 transition-all duration-200"
+                aria-label={`Switch to ${lang === 'en' ? 'Spanish' : 'English'}`}
+              >
+                {t.nav.toggleLang}
+              </button>
+              <button
+                className="p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-expanded={menuOpen}
+                aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
+              >
+                <div className="w-6 h-5 flex flex-col justify-between">
+                  <span
+                    className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center ${
+                      menuOpen ? 'rotate-45 translate-y-2' : ''
+                    }`}
+                  />
+                  <span
+                    className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 ${
+                      menuOpen ? 'opacity-0 scale-x-0' : ''
+                    }`}
+                  />
+                  <span
+                    className={`block h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center ${
+                      menuOpen ? '-rotate-45 -translate-y-2.5' : ''
+                    }`}
+                  />
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -194,13 +214,13 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="bg-[#FF3008] text-white font-bold text-xl text-center py-4 rounded-2xl hover:bg-[#E02000] transition-colors"
             >
-              🛵 Order on DoorDash
+              {t.nav.orderOnDoorDash}
             </a>
             <a
               href={siteConfig.phoneHref}
               className="border-2 border-brand-gold text-brand-gold font-bold text-xl text-center py-4 rounded-2xl hover:bg-brand-gold hover:text-brand-dark transition-colors"
             >
-              📞 Call Us
+              {t.nav.callUs}
             </a>
           </div>
 
@@ -210,7 +230,7 @@ export default function Navbar() {
               href={siteConfig.instagramLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram"
+              aria-label={t.nav.instagramAriaLabel}
               className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center text-white hover:scale-110 transition-transform"
             >
               <InstagramIcon />
@@ -219,7 +239,7 @@ export default function Navbar() {
               href={siteConfig.facebookLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Facebook"
+              aria-label={t.nav.facebookAriaLabel}
               className="w-12 h-12 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 transition-transform"
             >
               <FacebookIcon />

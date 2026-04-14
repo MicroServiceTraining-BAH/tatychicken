@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
+import Providers from '@/components/Providers';
 import { baseMetadata } from '@/lib/metadata';
 
 const inter = Inter({
@@ -29,10 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body className="antialiased bg-brand-cream text-brand-dark font-inter">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <MobileCTA />
+        <Providers>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <MobileCTA />
+        </Providers>
       </body>
     </html>
   );

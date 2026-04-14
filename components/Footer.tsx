@@ -1,14 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { siteConfig } from '@/lib/metadata';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/menu', label: 'Menu' },
-  { href: '/about', label: 'About' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/contact', label: 'Contact' },
-];
+import { useLanguage } from '@/lib/language-context';
 
 function InstagramIcon() {
   return (
@@ -26,15 +21,17 @@ function FacebookIcon() {
   );
 }
 
-function ChickenIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-    </svg>
-  );
-}
-
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { href: '/', label: t.nav.home },
+    { href: '/menu', label: t.nav.menu },
+    { href: '/about', label: t.nav.about },
+    { href: '/gallery', label: t.nav.gallery },
+    { href: '/contact', label: t.nav.contact },
+  ];
+
   return (
     <footer className="bg-brand-dark text-white" aria-label="Site footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -57,8 +54,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
-              Latin-inspired crispy fried chicken made fresh daily in Manassas, VA. Your
-              neighborhood&apos;s favorite spot for bold flavor and fast service.
+              {t.footer.description}
             </p>
 
             {/* Social Icons */}
@@ -67,7 +63,7 @@ export default function Footer() {
                 href={siteConfig.instagramLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Taty's Chicken on Instagram"
+                aria-label={t.footer.instagramAriaLabel}
                 className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-200"
               >
                 <InstagramIcon />
@@ -76,7 +72,7 @@ export default function Footer() {
                 href={siteConfig.facebookLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Taty's Chicken on Facebook"
+                aria-label={t.footer.facebookAriaLabel}
                 className="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-200"
               >
                 <FacebookIcon />
@@ -89,13 +85,13 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#FF3008] hover:bg-[#E02000] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg"
             >
-              Order on DoorDash
+              {t.footer.orderOnDoorDash}
             </a>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="font-poppins font-bold text-white mb-5">Navigation</h3>
+            <h3 className="font-poppins font-bold text-white mb-5">{t.footer.navigationHeading}</h3>
             <nav aria-label="Footer navigation">
               <ul className="space-y-3">
                 {navLinks.map(({ href, label }) => (
@@ -114,7 +110,7 @@ export default function Footer() {
 
           {/* Contact & Hours */}
           <div>
-            <h3 className="font-poppins font-bold text-white mb-5">Hours & Contact</h3>
+            <h3 className="font-poppins font-bold text-white mb-5">{t.footer.hoursContactHeading}</h3>
             <div className="space-y-3 text-sm text-gray-400">
               <div>
                 <a
@@ -136,7 +132,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-[#FF3008] hover:text-red-400 font-semibold transition-colors"
                 >
-                  Delivery via DoorDash →
+                  {t.footer.deliveryLink}
                 </a>
               </div>
             </div>
@@ -152,14 +148,14 @@ export default function Footer() {
             <a href={siteConfig.doordashLink} target="_blank" rel="noopener noreferrer" className="hover:text-red-400 transition-colors">DoorDash</a>
           </div>
           <p>
-            Made by{' '}
+            {t.footer.madeBy}{' '}
             <a
               href="https://lvluplocal.co/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-brand-gold hover:text-brand-gold-dark transition-colors font-medium"
             >
-              Level Up Local
+              {t.footer.madeByName}
             </a>
           </p>
         </div>
