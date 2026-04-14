@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { siteConfig } from '@/lib/metadata';
 import { useLanguage } from '@/lib/language-context';
+import OrderButton from './OrderButton';
 
 export default function DeliveryBanner() {
   const { t } = useLanguage();
@@ -59,16 +59,10 @@ export default function DeliveryBanner() {
               {t.delivery.body}
             </p>
 
-            <a
-              href={siteConfig.doordashLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t.delivery.cta}
-              className="group inline-flex items-center gap-3 bg-white text-[#B50F1E] font-black text-xl px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-black/30 active:scale-95"
-            >
+            <OrderButton className="group gap-3 bg-white text-[#B50F1E] font-black text-xl px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-black/30 active:scale-95">
               {t.delivery.cta}
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </a>
+            </OrderButton>
           </div>
 
           {/* Right: Stats card */}

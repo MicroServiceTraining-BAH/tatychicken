@@ -2,6 +2,7 @@
 
 import { siteConfig } from '@/lib/metadata';
 import { useLanguage } from '@/lib/language-context';
+import OrderButton from './OrderButton';
 
 export default function MobileCTA() {
   const { t } = useLanguage();
@@ -22,18 +23,15 @@ export default function MobileCTA() {
           </svg>
           {t.mobileCta.callLabel}
         </a>
-        <a
-          href={siteConfig.doordashLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 py-4 bg-[#FF3008] hover:bg-[#E02000] active:bg-[#E02000] text-white font-bold text-sm transition-colors min-h-[56px]"
+        <OrderButton
+          className="flex-1 gap-2 py-4 bg-[#FF3008] hover:bg-[#E02000] active:bg-[#E02000] text-white font-bold text-sm transition-colors min-h-[56px]"
           aria-label={t.mobileCta.orderAriaLabel}
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z" />
           </svg>
           {t.mobileCta.orderLabel}
-        </a>
+        </OrderButton>
       </div>
     </div>
   );

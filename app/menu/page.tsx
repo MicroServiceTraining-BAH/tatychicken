@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import MenuSection from '@/components/MenuSection';
 import MenuPageHero from '@/components/MenuPageHero';
+import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'Menu',
@@ -13,7 +14,9 @@ export default function MenuPage() {
   return (
     <>
       <MenuPageHero />
-      <MenuSection />
+      <Reveal>
+        <MenuSection />
+      </Reveal>
     </>
   );
 }

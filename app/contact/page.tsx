@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ContactPageHero from '@/components/ContactPageHero';
 import ContactSection from '@/components/ContactSection';
+import Reveal from '@/components/Reveal';
 import { siteConfig } from '@/lib/metadata';
 
 export const metadata: Metadata = {
@@ -12,7 +13,9 @@ export default function ContactPage() {
   return (
     <>
       <ContactPageHero />
-      <ContactSection />
+      <Reveal>
+        <ContactSection />
+      </Reveal>
     </>
   );
 }

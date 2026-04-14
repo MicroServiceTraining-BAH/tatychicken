@@ -15,6 +15,7 @@ export const siteConfig = {
   },
   doordashLink:
     "https://www.doordash.com/store/taty's-chicken-manassas-26346203/57620347/?cursor=eyJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsNCwxNzUsMTc2LDE3NywxNzksMTkzLDE5NSwyODRdfQ==&pickup=false",
+  toastLink: 'https://order.toasttab.com/online/tatys-chicken-10768-sudley-manor-drive',
   instagramLink: 'https://www.instagram.com/tatys.chicken?igsh=dzBod2VjMm9tc2ty',
   facebookLink:
     'https://www.facebook.com/tatyschicken?mibextid=wwXIfr&rdid=VScPzJol5J6LHibx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AMmRVy9jo%2F%3Fmibextid%3DwwXIfr',

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '@/lib/metadata';
 import { useLanguage } from '@/lib/language-context';
+import OrderButton from './OrderButton';
 
 function InstagramIcon() {
   return (
@@ -137,15 +138,10 @@ export default function Navbar() {
                 {t.nav.toggleLang}
               </button>
 
-              {/* DoorDash CTA */}
-              <a
-                href={siteConfig.doordashLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-[#FF3008] hover:bg-[#E02000] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-red-600/40 hover:scale-105 active:scale-95"
-              >
+              {/* Order CTA */}
+              <OrderButton className="flex items-center gap-2 bg-[#FF3008] hover:bg-[#E02000] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-red-600/40 hover:scale-105 active:scale-95">
                 {t.nav.orderDelivery}
-              </a>
+              </OrderButton>
             </div>
 
             {/* Mobile right: lang toggle + hamburger */}
@@ -208,14 +204,9 @@ export default function Navbar() {
             ))}
           </nav>
           <div className="mt-10 flex flex-col gap-4">
-            <a
-              href={siteConfig.doordashLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#FF3008] text-white font-bold text-xl text-center py-4 rounded-2xl hover:bg-[#E02000] transition-colors"
-            >
+            <OrderButton className="w-full bg-[#FF3008] text-white font-bold text-xl text-center py-4 rounded-2xl hover:bg-[#E02000] transition-colors">
               {t.nav.orderOnDoorDash}
-            </a>
+            </OrderButton>
             <a
               href={siteConfig.phoneHref}
               className="border-2 border-brand-gold text-brand-gold font-bold text-xl text-center py-4 rounded-2xl hover:bg-brand-gold hover:text-brand-dark transition-colors"

@@ -66,12 +66,16 @@ export default function MenuSection() {
           aria-label={`${categoryTranslations[activeCategory] ?? activeCategory} menu items`}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
-          {filtered.map((item) => {
+          {filtered.map((item, idx) => {
             const tr = itemTranslations[item.id];
             const name = tr?.name ?? item.name;
             const description = tr?.description ?? item.description;
             return (
-              <article key={item.id} className="card group p-5 flex items-start gap-4">
+              <article
+                key={item.id}
+                className="card group p-5 flex items-start gap-4 animate-fade-up"
+                style={{ animationDelay: `${idx * 50}ms`, animationFillMode: 'both' }}
+              >
                 {/* Color-coded category dot */}
                 <div className="flex-shrink-0 w-10 h-10 bg-brand-muted rounded-xl flex items-center justify-center mt-0.5">
                   <span className="w-3 h-3 rounded-full bg-brand-red opacity-70 group-hover:opacity-100 transition-opacity" />

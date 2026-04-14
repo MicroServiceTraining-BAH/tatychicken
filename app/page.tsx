@@ -6,6 +6,8 @@ import DeliveryBanner from '@/components/DeliveryBanner';
 import AboutSection from '@/components/AboutSection';
 import GallerySection from '@/components/GallerySection';
 import ContactSection from '@/components/ContactSection';
+import MarqueeStrip from '@/components/MarqueeStrip';
+import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: "Taty's Chicken | Crispy Latin-Style Fried Chicken in Manassas, VA",
@@ -17,12 +19,23 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <MarqueeStrip />
       <QuickActions />
-      <FeaturedItems />
-      <DeliveryBanner />
-      <AboutSection />
-      <GallerySection />
-      <ContactSection />
+      <Reveal>
+        <FeaturedItems />
+      </Reveal>
+      <Reveal>
+        <DeliveryBanner />
+      </Reveal>
+      <Reveal>
+        <AboutSection />
+      </Reveal>
+      <Reveal>
+        <GallerySection />
+      </Reveal>
+      <Reveal>
+        <ContactSection />
+      </Reveal>
     </>
   );
 }

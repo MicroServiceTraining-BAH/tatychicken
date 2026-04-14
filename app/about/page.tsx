@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import AboutPageHero from '@/components/AboutPageHero';
 import AboutSection from '@/components/AboutSection';
 import AboutPageContent from '@/components/AboutPageContent';
+import Reveal from '@/components/Reveal';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -13,8 +14,12 @@ export default function AboutPage() {
   return (
     <>
       <AboutPageHero />
-      <AboutSection />
-      <AboutPageContent />
+      <Reveal>
+        <AboutSection />
+      </Reveal>
+      <Reveal>
+        <AboutPageContent />
+      </Reveal>
     </>
   );
 }

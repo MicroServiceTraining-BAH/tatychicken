@@ -2,6 +2,7 @@
 
 import { siteConfig } from '@/lib/metadata';
 import { useLanguage } from '@/lib/language-context';
+import OrderButton from './OrderButton';
 
 function PhoneIcon() {
   return (
@@ -33,7 +34,7 @@ const icons = [PhoneIcon, MapIcon, BagIcon];
 export default function QuickActions() {
   const { t } = useLanguage();
 
-  const actions = [
+  const linkActions = [
     {
       label: t.quickActions.callLabel,
       sublabel: siteConfig.phone,
@@ -48,20 +49,13 @@ export default function QuickActions() {
       description: t.quickActions.directionsDescription,
       external: true,
     },
-    {
-      label: t.quickActions.doordashLabel,
-      sublabel: t.quickActions.doordashSublabel,
-      href: siteConfig.doordashLink,
-      description: t.quickActions.doordashDescription,
-      external: true,
-    },
   ];
 
   return (
     <section className="bg-brand-dark py-4" aria-label="Quick actions">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden">
-          {actions.map(({ label, sublabel, href, description, external }, idx) => {
+          {linkActions.map(({ label, sublabel, href, description, external }, idx) => {
             const Icon = icons[idx];
             return (
               <a
@@ -87,6 +81,26 @@ export default function QuickActions() {
               </a>
             );
           })}
+
+          {/* Order Online — opens modal with DoorDash + Toast + Phone */}
+          <OrderButton
+            block
+            className="group flex items-center gap-4 bg-brand-dark px-6 py-5 hover:bg-white/5 transition-all duration-300 w-full text-left"
+            aria-label={t.quickActions.doordashDescription}
+          >
+            <span className="text-brand-gold transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
+              <BagIcon />
+            </span>
+            <div>
+              <div className="font-poppins font-bold text-white text-base group-hover:text-brand-gold transition-colors">
+                {t.quickActions.doordashLabel}
+              </div>
+              <div className="text-gray-400 text-sm">{t.quickActions.doordashSublabel}</div>
+            </div>
+            <span className="ml-auto text-gray-600 group-hover:text-brand-gold group-hover:translate-x-1 transition-all duration-300 text-lg">
+              →
+            </span>
+          </OrderButton>
         </div>
       </div>
     </section>

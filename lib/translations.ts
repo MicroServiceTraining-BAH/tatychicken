@@ -325,6 +325,17 @@ const t = {
       heroHeading: 'Find Us',
       heroSubtitle: "We're easy to find and even easier to love. Stop in today.",
     },
+    orderModal: {
+      heading: 'Order Taty\'s Chicken',
+      subheading: 'How would you like to order?',
+      doordashLabel: 'Order Delivery',
+      doordashSub: 'Fast delivery via DoorDash',
+      toastLabel: 'Order Online',
+      toastSub: 'Delivery or pickup via Toast',
+      callLabel: 'Call to Order',
+      callSub: 'Speak with us directly',
+      close: 'Close',
+    },
   },
   es: {
     nav: {
@@ -653,6 +664,17 @@ const t = {
       heroBadge: 'Ven a Visitarnos',
       heroHeading: 'Encuéntranos',
       heroSubtitle: 'Somos fáciles de encontrar y aún más fáciles de querer. Pásate hoy.',
+    },
+    orderModal: {
+      heading: 'Pedir en Taty\'s Chicken',
+      subheading: '¿Cómo te gustaría ordenar?',
+      doordashLabel: 'Pedir a Domicilio',
+      doordashSub: 'Entrega rápida por DoorDash',
+      toastLabel: 'Ordenar en Línea',
+      toastSub: 'Entrega o recogida por Toast',
+      callLabel: 'Llamar para Ordenar',
+      callSub: 'Habla con nosotros directamente',
+      close: 'Cerrar',
     },
   },
 } as const;

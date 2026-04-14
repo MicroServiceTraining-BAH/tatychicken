@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { siteConfig } from '@/lib/metadata';
 import { useLanguage } from '@/lib/language-context';
+import OrderButton from './OrderButton';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -12,7 +12,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-[100dvh] flex flex-col justify-center overflow-hidden"
       aria-label="Hero section"
     >
       {/* Background image */}
@@ -66,14 +66,9 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 mb-14 animate-fade-up animate-delay-200">
-            <a
-              href={siteConfig.doordashLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-brand-red hover:bg-brand-red-dark text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 hover:shadow-2xl hover:shadow-brand-red/30 hover:scale-105 active:scale-95 min-h-[56px] flex items-center justify-center gap-2"
-            >
+            <OrderButton className="w-full sm:w-auto bg-brand-red hover:bg-brand-red-dark text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 hover:shadow-2xl hover:shadow-brand-red/30 hover:scale-105 active:scale-95 min-h-[56px] gap-2">
               {t.hero.ctaDelivery}
-            </a>
+            </OrderButton>
             <Link
               href="/menu"
               className="w-full sm:w-auto border-2 border-white/70 text-white hover:bg-white hover:text-brand-dark font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 min-h-[56px] flex items-center justify-center"
