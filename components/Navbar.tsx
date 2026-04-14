@@ -204,9 +204,14 @@ export default function Navbar() {
             ))}
           </nav>
           <div className="mt-10 flex flex-col gap-4">
-            <OrderButton className="w-full bg-[#FF3008] text-white font-bold text-xl text-center py-4 rounded-2xl hover:bg-[#E02000] transition-colors">
+            <a
+              href={siteConfig.doordashLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-[#FF3008] text-white font-bold text-xl text-center py-4 rounded-2xl hover:bg-[#E02000] transition-colors block"
+            >
               {t.nav.orderOnDoorDash}
-            </OrderButton>
+            </a>
             <a
               href={siteConfig.phoneHref}
               className="border-2 border-brand-gold text-brand-gold font-bold text-xl text-center py-4 rounded-2xl hover:bg-brand-gold hover:text-brand-dark transition-colors"

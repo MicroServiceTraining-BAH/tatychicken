@@ -2,7 +2,6 @@
 
 import { siteConfig } from '@/lib/metadata';
 import { useLanguage } from '@/lib/language-context';
-import OrderButton from './OrderButton';
 
 function PhoneIcon() {
   return (
@@ -82,11 +81,13 @@ export default function QuickActions() {
             );
           })}
 
-          {/* Order Online — opens modal with DoorDash + Toast + Phone */}
-          <OrderButton
-            block
-            className="group flex items-center gap-4 bg-brand-dark px-6 py-5 hover:bg-white/5 transition-all duration-300 w-full text-left"
+          {/* Order on DoorDash — direct link to DoorDash */}
+          <a
+            href={siteConfig.doordashLink}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label={t.quickActions.doordashDescription}
+            className="group flex items-center gap-4 bg-brand-dark px-6 py-5 hover:bg-white/5 transition-all duration-300"
           >
             <span className="text-brand-gold transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
               <BagIcon />
@@ -100,7 +101,7 @@ export default function QuickActions() {
             <span className="ml-auto text-gray-600 group-hover:text-brand-gold group-hover:translate-x-1 transition-all duration-300 text-lg">
               →
             </span>
-          </OrderButton>
+          </a>
         </div>
       </div>
     </section>

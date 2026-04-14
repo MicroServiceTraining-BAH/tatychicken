@@ -70,7 +70,7 @@ export default function OrderModal({ onClose }: OrderModalProps) {
 
         {/* Options */}
         <div className="p-4 space-y-3">
-          {/* Toast — Online Order (pickup + delivery) — featured first */}
+          {/* Toast — Online Order (pickup only) — featured first */}
           <a
             href={siteConfig.toastLink}
             target="_blank"
@@ -84,7 +84,10 @@ export default function OrderModal({ onClose }: OrderModalProps) {
               </svg>
             </div>
             <div className="flex-1 text-left">
-              <div className="font-poppins font-bold text-base">{t.orderModal.toastLabel}</div>
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className="font-poppins font-bold text-base">{t.orderModal.toastLabel}</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-brand-gold text-brand-dark px-1.5 py-0.5 rounded-md">Pickup</span>
+              </div>
               <div className="text-gray-400 group-hover:text-white/70 text-sm transition-colors">{t.orderModal.toastSub}</div>
             </div>
             <svg className="w-4 h-4 text-gray-500 group-hover:text-white group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
@@ -106,7 +109,10 @@ export default function OrderModal({ onClose }: OrderModalProps) {
               </svg>
             </div>
             <div className="flex-1 text-left">
-              <div className="font-poppins font-bold text-base">{t.orderModal.doordashLabel}</div>
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className="font-poppins font-bold text-base">{t.orderModal.doordashLabel}</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white px-1.5 py-0.5 rounded-md">Delivery</span>
+              </div>
               <div className="text-red-200 text-sm">{t.orderModal.doordashSub}</div>
             </div>
             <svg className="w-4 h-4 text-red-300 group-hover:text-white group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
