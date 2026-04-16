@@ -6,9 +6,9 @@ export const siteConfig = {
   description:
     "Taty's Chicken in Manassas, VA — crispy, Latin-inspired fried chicken made fresh daily. Fast service, family portions, authentic flavor. Order now on DoorDash or visit us today.",
   url: 'https://tatyschicken.com',
-  phone: '(703) 555-0123',
-  phoneHref: 'tel:+17035550123',
-  address: 'Manassas, VA',
+  phone: '(571) 379-7421',
+  phoneHref: 'tel:+15713797421',
+  address: '10768 Sudley Manor Dr., Manassas, VA 20109',
   hours: {
     weekdays: 'Mon – Sat: 11am – 9pm',
     weekend: 'Sun: 12pm – 8pm',
@@ -21,9 +21,9 @@ export const siteConfig = {
     'https://www.facebook.com/tatyschicken?mibextid=wwXIfr&rdid=VScPzJol5J6LHibx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AMmRVy9jo%2F%3Fmibextid%3DwwXIfr',
   orderLink:
     "https://www.doordash.com/store/taty's-chicken-manassas-26346203/57620347/?cursor=eyJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsNCwxNzUsMTc2LDE3NywxNzksMTkzLDE5NSwyODRdfQ==&pickup=false",
-  mapsLink: 'https://maps.google.com/?q=Taty%27s+Chicken+Manassas+VA',
+  mapsLink: 'https://maps.google.com/?q=10768+Sudley+Manor+Dr+Manassas+VA+20109',
   mapsEmbed:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.12!2d-77.4761!3d38.7509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64d3e9f1b1c1d%3A0x0!2sTaty%27s+Chicken+Manassas+VA!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.12!2d-77.4761!3d38.7509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64d3e9f1b1c1d%3A0x0!2s10768+Sudley+Manor+Dr+Manassas+VA+20109!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus',
 } as const;
 
 export const baseMetadata: Metadata = {
