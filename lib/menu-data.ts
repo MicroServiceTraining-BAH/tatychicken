@@ -15,7 +15,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'whole-chicken',
     name: 'Whole Chicken',
-    description: 'Seasoned & fried whole bird — golden, juicy, and packed with flavor.',
+    description: 'Seasoned and fried whole bird. Golden, juicy, and packed with flavor.',
     price: 'Market Price',
     category: 'chicken',
   },
@@ -30,7 +30,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'quarter-breast',
     name: 'Quarter Chicken (Breast)',
-    description: 'Crispy golden breast quarter — the crowd favorite cut.',
+    description: 'Crispy golden breast quarter, the crowd favorite cut.',
     price: '$5.99',
     category: 'chicken',
   },
@@ -95,7 +95,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'fries',
     name: 'French Fries',
-    description: 'Golden, crispy fries — seasoned and perfectly salted.',
+    description: 'Golden, crispy fries. Seasoned and perfectly salted.',
     price: '$2.49',
     category: 'sides',
     popular: true,
@@ -103,7 +103,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'rice-beans',
     name: 'Rice & Beans',
-    description: 'Authentic Latin-style rice and beans — a true comfort classic.',
+    description: 'Authentic Latin-style rice and beans, a true comfort classic.',
     price: '$2.99',
     category: 'sides',
   },
@@ -117,14 +117,14 @@ export const menuItems: MenuItem[] = [
   {
     id: 'coleslaw',
     name: 'Coleslaw',
-    description: 'Cool, creamy coleslaw — the perfect balance to crispy chicken.',
+    description: 'Cool, creamy coleslaw. The perfect balance to crispy chicken.',
     price: '$1.99',
     category: 'sides',
   },
   {
     id: 'plantains',
     name: 'Fried Plantains',
-    description: 'Sweet and crispy maduros — a Latin staple you can\'t skip.',
+    description: "Sweet and crispy maduros, a Latin staple you can't skip.",
     price: '$2.99',
     category: 'sides',
     popular: true,
@@ -132,7 +132,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'corn',
     name: 'Corn on the Cob',
-    description: 'Buttered corn on the cob — simple, sweet, and satisfying.',
+    description: 'Buttered corn on the cob. Simple, sweet, and satisfying.',
     price: '$1.49',
     category: 'sides',
   },
@@ -155,7 +155,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'lemonade',
     name: 'Fresh Lemonade',
-    description: 'Freshly squeezed lemonade — sweet, tart, and ice cold.',
+    description: 'Freshly squeezed lemonade. Sweet, tart, and ice cold.',
     price: '$2.99',
     category: 'drinks',
     popular: true,
@@ -163,7 +163,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'agua-fresca',
     name: 'Agua Fresca',
-    description: 'House-made agua fresca — ask about today\'s flavor.',
+    description: "House-made agua fresca. Ask about today's flavor.",
     price: '$2.99',
     category: 'drinks',
   },
@@ -172,7 +172,7 @@ export const menuItems: MenuItem[] = [
   {
     id: 'daily-special',
     name: 'Daily Special',
-    description: 'Ask about our rotating daily deals — always fresh, always a great value.',
+    description: 'Ask about our rotating daily deals. Always fresh, always a great value.',
     price: 'Market Price',
     category: 'specials',
   },
@@ -185,13 +185,13 @@ export const menuItems: MenuItem[] = [
   },
 ];
 
-export const categories: { id: MenuCategory | 'all'; label: string; emoji: string }[] = [
-  { id: 'all', label: 'All Items', emoji: '🍽️' },
-  { id: 'chicken', label: 'Chicken', emoji: '🍗' },
-  { id: 'combos', label: 'Combos', emoji: '🔥' },
-  { id: 'sides', label: 'Sides', emoji: '🍟' },
-  { id: 'drinks', label: 'Drinks', emoji: '🥤' },
-  { id: 'specials', label: 'Specials', emoji: '⭐' },
+export const categories: { id: MenuCategory | 'all'; label: string }[] = [
+  { id: 'all', label: 'All Items' },
+  { id: 'chicken', label: 'Chicken' },
+  { id: 'combos', label: 'Combos' },
+  { id: 'sides', label: 'Sides' },
+  { id: 'drinks', label: 'Drinks' },
+  { id: 'specials', label: 'Specials' },
 ];
 
 export const featuredItems = menuItems.filter((item) => item.popular).slice(0, 4);

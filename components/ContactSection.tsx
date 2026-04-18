@@ -96,8 +96,20 @@ export default function ContactSection() {
                 <div className="font-poppins font-bold text-brand-dark text-base mb-3">{t.contact.hoursHeading}</div>
                 <div className="space-y-1.5 text-gray-600">
                   <div className="flex justify-between text-sm">
-                    <span className="font-medium">{t.contact.monSat}</span>
-                    <span>{t.contact.monSatHours}</span>
+                    <span className="font-medium">{t.contact.monTue}</span>
+                    <span>{t.contact.monTueHours}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="font-medium">{t.contact.wedThu}</span>
+                    <span>{t.contact.wedThuHours}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="font-medium">{t.contact.fri}</span>
+                    <span>{t.contact.friHours}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="font-medium">{t.contact.sat}</span>
+                    <span>{t.contact.satHours}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="font-medium">{t.contact.sunday}</span>

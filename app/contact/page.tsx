@@ -6,7 +6,7 @@ import { siteConfig } from '@/lib/metadata';
 
 export const metadata: Metadata = {
   title: 'Contact & Location',
-  description: `Visit Taty's Chicken at ${siteConfig.address}. Call us at ${siteConfig.phone}. Mon–Sat 11am–9pm, Sun 12pm–8pm.`,
+  description: `Visit Taty's Chicken at ${siteConfig.address}. Call us at ${siteConfig.phone}. Mon–Tue 11am–8pm, Wed–Thu 11am–9pm, Fri 11am–10pm, Sat 9am–10pm, Sun 9am–8pm.`,
 };
 
 export default function ContactPage() {

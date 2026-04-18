@@ -156,12 +156,12 @@ export default function OrderModal({ onClose }: OrderModalProps) {
                   Delivery
                 </span>
               </div>
-              <div className="text-red-200 group-hover:text-white/80 text-sm transition-colors">
+              <div className="text-pink-200 group-hover:text-white/80 text-sm transition-colors">
                 {t.orderModal.doordashSub}
               </div>
             </div>
             <svg
-              className="w-4 h-4 text-red-300 group-hover:text-white group-hover:translate-x-0.5 transition-all"
+              className="w-4 h-4 text-pink-300 group-hover:text-white group-hover:translate-x-0.5 transition-all"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

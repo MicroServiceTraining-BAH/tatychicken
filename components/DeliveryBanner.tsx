@@ -24,10 +24,10 @@ export default function DeliveryBanner() {
       </div>
 
       {/* Solid dark red base — guarantees contrast on all devices */}
-      <div className="absolute inset-0 bg-[#B50F1E]" />
+      <div className="absolute inset-0 bg-[#C41E20]" />
 
       {/* Subtle vignette: left fully opaque, right lets image peek through */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#9B0D1A] via-[#B50F1E]/95 to-[#B50F1E]/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#A01A1C] via-[#C41E20]/95 to-[#C41E20]/80" />
 
       {/* Diagonal stripe texture */}
       <div
@@ -42,7 +42,7 @@ export default function DeliveryBanner() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left: Copy */}
           <div className="text-center lg:text-left max-w-xl">
-            <p className="text-red-200 font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="text-pink-200 font-semibold text-sm uppercase tracking-widest mb-4">
               {t.delivery.eyebrow}
             </p>
 
@@ -55,11 +55,11 @@ export default function DeliveryBanner() {
               <span className="text-yellow-300">{t.delivery.heading2}</span>
             </h2>
 
-            <p className="text-red-100 text-lg md:text-xl leading-relaxed mb-10">
+            <p className="text-pink-100 text-lg md:text-xl leading-relaxed mb-10">
               {t.delivery.body}
             </p>
 
-            <OrderButton className="group gap-3 bg-white text-[#B50F1E] font-black text-xl px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-black/30 active:scale-95">
+            <OrderButton className="group gap-3 bg-white text-[#C41E20] font-black text-xl px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-black/30 active:scale-95">
               {t.delivery.cta}
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </OrderButton>
@@ -84,15 +84,15 @@ export default function DeliveryBanner() {
               <div className="grid grid-cols-3 gap-4 text-white">
                 <div>
                   <div className="font-poppins font-black text-2xl">{t.delivery.statsMin}</div>
-                  <div className="text-red-200 text-xs font-medium mt-0.5">{t.delivery.statsMinLabel}</div>
+                  <div className="text-pink-200 text-xs font-medium mt-0.5">{t.delivery.statsMinLabel}</div>
                 </div>
                 <div className="border-x border-white/20">
                   <div className="font-poppins font-black text-2xl">{t.delivery.statsHot}</div>
-                  <div className="text-red-200 text-xs font-medium mt-0.5">{t.delivery.statsHotLabel}</div>
+                  <div className="text-pink-200 text-xs font-medium mt-0.5">{t.delivery.statsHotLabel}</div>
                 </div>
                 <div>
                   <div className="font-poppins font-black text-2xl">{t.delivery.statsFast}</div>
-                  <div className="text-red-200 text-xs font-medium mt-0.5">{t.delivery.statsFastLabel}</div>
+                  <div className="text-pink-200 text-xs font-medium mt-0.5">{t.delivery.statsFastLabel}</div>
                 </div>
               </div>
             </div>

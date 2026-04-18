@@ -4,14 +4,14 @@ export const siteConfig = {
   name: "Taty's Chicken",
   tagline: 'Crispy Latin-Style Fried Chicken',
   description:
-    "Taty's Chicken in Manassas, VA — crispy, Latin-inspired fried chicken made fresh daily. Fast service, family portions, authentic flavor. Order now on DoorDash or visit us today.",
+    "Taty's Chicken in Manassas, VA. Crispy, Latin-inspired fried chicken made fresh daily. Fast service, family portions, authentic flavor. Order now on DoorDash or visit us today.",
   url: 'https://tatyschicken.com',
   phone: '(571) 379-7421',
   phoneHref: 'tel:+15713797421',
   address: '10768 Sudley Manor Dr., Manassas, VA 20109',
   hours: {
-    weekdays: 'Mon – Sat: 11am – 9pm',
-    weekend: 'Sun: 12pm – 8pm',
+    weekdays: 'Mon–Thu: 11am–8/9pm · Fri–Sat: 9/11am–10pm',
+    weekend: 'Sun: 9am – 8pm',
   },
   doordashLink:
     "https://www.doordash.com/store/taty's-chicken-manassas-26346203/57620347/?cursor=eyJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsNCwxNzUsMTc2LDE3NywxNzksMTkzLDE5NSwyODRdfQ==&pickup=false",

@@ -10,17 +10,19 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          red: '#C8102E',
-          'red-dark': '#A00D24',
-          'red-light': '#E8193D',
-          gold: '#F5A623',
-          'gold-dark': '#D4891A',
+          red: '#E8232A',
+          'red-dark': '#C41E20',
+          'red-light': '#F03838',
+          gold: '#F5A800',
+          'gold-dark': '#D48E00',
+          orange: '#F06830',
           dark: '#1A1A1A',
           cream: '#FFFBF5',
           muted: '#F7F3EE',
         },
       },
       fontFamily: {
+        bebas: ['var(--font-bebas)', 'sans-serif'],
         poppins: ['var(--font-poppins)', 'sans-serif'],
         inter: ['var(--font-inter)', 'sans-serif'],
       },

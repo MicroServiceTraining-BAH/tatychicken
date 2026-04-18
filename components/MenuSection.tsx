@@ -41,7 +41,7 @@ export default function MenuSection() {
           role="tablist"
           aria-label={t.menu.categoriesAriaLabel}
         >
-          {categories.map(({ id, emoji }) => (
+          {categories.map(({ id }) => (
             <button
               key={id}
               role="tab"
@@ -54,7 +54,7 @@ export default function MenuSection() {
                   : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
               }`}
             >
-              {emoji} {categoryTranslations[id] ?? id}
+              {categoryTranslations[id] ?? id}
             </button>
           ))}
         </div>
