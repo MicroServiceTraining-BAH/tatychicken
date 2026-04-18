@@ -2,7 +2,6 @@
 
 type Review = {
   name: string;
-  date: string;
   text: string;
   rating: number;
   badge?: string;
@@ -11,56 +10,47 @@ type Review = {
 const REVIEWS: Review[] = [
   {
     name: 'Audrey Melendez',
-    date: 'A month ago',
     rating: 5,
     text: 'The food was so delicious and fresh. Flavor was authentic and reminded me of my childhood in Peru. Service was great and the food was fast coming out. 100% would recommend.',
   },
   {
     name: 'A Nikaj',
-    date: '2 months ago',
     rating: 5,
     text: 'This amazing place has become my favorite place to dine since the first time I visited. Great food, great atmosphere and even greater staff and service. They are the sweetest people.',
   },
   {
     name: 'Lenni Alo',
-    date: '5 months ago',
     rating: 5,
     badge: 'Local Guide',
     text: "This is my partner's favorite place for ceviche. The prices seem a little pricey until you see the portions and how delicious the food is! I crave the Yuca fries from here with their green and yellow sauces.",
   },
   {
     name: 'Krissia Aguilera',
-    date: '2 months ago',
     rating: 5,
     text: "Tatys is the best Peruvian spot in Manassas. My family and I come here often since they opened and their customer service is always great.",
   },
   {
     name: 'Diego Herrera',
-    date: '2 months ago',
     rating: 5,
     text: 'The food as always was amazing! We love coming here for the flavor and the amazing staff! Jordan was great and offered us great service! We\'ll be here again soon!!',
   },
   {
     name: 'Nathan W',
-    date: '2 months ago',
     rating: 5,
     text: 'This is easily some of the best food in town, that more people should definitely be talking about.',
   },
   {
     name: 'Carolina M.',
-    date: '3 months ago',
     rating: 5,
     text: "Found this place overall very pleasant. Don't let the outside fool you. Once you're inside the atmosphere is great, the service is excellent, music is nice, and the food is amazing.",
   },
   {
     name: 'Julie Cruz',
-    date: 'A month ago',
     rating: 5,
     text: 'The food recommendation was amazing 10 out of 10. Our first time here, and we had a great experience.',
   },
   {
     name: 'Daigoro Tsukiashi',
-    date: '2 months ago',
     rating: 5,
     text: 'The food was amazing. The energy and vibes were great. The service was outstanding. Jordan our waiter took great care of us and provided an awesome experience.',
   },
@@ -139,7 +129,6 @@ export default function ReviewsSection() {
               <p className="text-gray-300 text-sm leading-relaxed flex-1">
                 &ldquo;{review.text}&rdquo;
               </p>
-              <p className="text-gray-500 text-xs">{review.date}</p>
             </article>
           ))}
         </div>
