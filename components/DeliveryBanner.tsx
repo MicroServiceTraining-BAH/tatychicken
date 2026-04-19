@@ -24,10 +24,10 @@ export default function DeliveryBanner() {
       </div>
 
       {/* Solid dark red base — guarantees contrast on all devices */}
-      <div className="absolute inset-0 bg-[#C41E20]" />
+      <div className="absolute inset-0 bg-brand-red" />
 
       {/* Subtle vignette: left fully opaque, right lets image peek through */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#A01A1C] via-[#C41E20]/95 to-[#C41E20]/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-red-dark via-brand-red/95 to-brand-red/80" />
 
       {/* Diagonal stripe texture */}
       <div
@@ -59,7 +59,7 @@ export default function DeliveryBanner() {
               {t.delivery.body}
             </p>
 
-            <OrderButton className="group gap-3 bg-white text-[#C41E20] font-black text-xl px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-black/30 active:scale-95">
+            <OrderButton className="group gap-3 bg-white text-brand-red font-black text-xl px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-black/30 active:scale-95">
               {t.delivery.cta}
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </OrderButton>

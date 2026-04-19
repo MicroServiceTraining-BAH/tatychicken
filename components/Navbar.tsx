@@ -106,8 +106,21 @@ export default function Navbar() {
                 ))}
               </nav>
 
-              {/* Right side: socials + lang + Order CTA */}
+              {/* Right side: lang toggle | socials | Order CTA */}
               <div className={`absolute right-0 hidden md:flex items-center gap-3 ${!scrolled ? '[text-shadow:0_1px_8px_rgba(0,0,0,0.8)]' : ''}`}>
+                {/* Language toggle — visually distinct from socials */}
+                <button
+                  onClick={toggle}
+                  className="flex items-center gap-1 px-2.5 py-1 rounded-md border border-white/30 text-gray-300 hover:text-white hover:border-white/60 font-bold text-xs tracking-widest transition-all duration-200"
+                  aria-label={`Switch to ${lang === 'en' ? 'Spanish' : 'English'}`}
+                >
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+                  {t.nav.toggleLang}
+                </button>
+
+                <div className="w-px h-5 bg-white/20" />
+
+                {/* Social icons */}
                 <a
                   href={siteConfig.instagramLink}
                   target="_blank"
@@ -135,15 +148,10 @@ export default function Navbar() {
                 >
                   <TikTokIcon />
                 </a>
-                <button
-                  onClick={toggle}
-                  className="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center text-gray-300 hover:text-white hover:border-white/60 font-semibold text-xs transition-all duration-200"
-                  aria-label={`Switch to ${lang === 'en' ? 'Spanish' : 'English'}`}
-                >
-                  {t.nav.toggleLang}
-                </button>
+
                 <div className="w-px h-5 bg-white/20" />
-                <OrderButton className="flex items-center gap-2 bg-[#FF3008] hover:bg-[#E02000] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-red-600/40 hover:scale-105 active:scale-95">
+
+                <OrderButton className="flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-brand-red/40 hover:scale-105 active:scale-95">
                   {t.nav.orderDelivery}
                 </OrderButton>
               </div>
@@ -194,7 +202,7 @@ export default function Navbar() {
               href={siteConfig.doordashLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-[#FF3008] text-white font-bold text-xl text-center py-4 rounded-2xl hover:bg-[#E02000] transition-colors block"
+              className="w-full bg-brand-red text-white font-bold text-xl text-center py-4 rounded-2xl hover:bg-brand-red-dark transition-colors block"
             >
               {t.nav.orderOnDoorDash}
             </a>

@@ -10,15 +10,15 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          red: '#E8232A',
-          'red-dark': '#C41E20',
-          'red-light': '#F03838',
-          gold: '#F5A800',
-          'gold-dark': '#D48E00',
-          orange: '#F06830',
+          red: '#d01077',
+          'red-dark': '#a80d60',
+          'red-light': '#e8209a',
+          gold: '#f9ac01',
+          'gold-dark': '#d48e00',
+          orange: '#eb772f',
           dark: '#1A1A1A',
-          cream: '#FFFBF5',
-          muted: '#F7F3EE',
+          cream: '#ffffff',
+          muted: '#fdf5fb',
         },
       },
       fontFamily: {

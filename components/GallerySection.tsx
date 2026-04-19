@@ -41,9 +41,8 @@ export default function GallerySection() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 md:py-28 bg-brand-cream" aria-labelledby="gallery-heading">
+    <section className="py-20 md:py-28 bg-white" aria-labelledby="gallery-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-14">
           <p className="text-brand-red font-semibold text-sm uppercase tracking-widest mb-3">
             {t.gallery.eyebrow}
@@ -57,7 +56,7 @@ export default function GallerySection() {
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-4 grid-rows-2 gap-4 h-[540px]">
+        <div className="hidden md:grid grid-cols-4 grid-rows-2 gap-3 h-[560px]">
           {galleryImages.map(({ src, alt, className }, idx) => (
             <div
               key={idx}
@@ -67,7 +66,7 @@ export default function GallerySection() {
                 src={src}
                 alt={alt}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, 25vw"
                 loading={idx === 0 ? 'eager' : 'lazy'}
               />
@@ -81,13 +80,13 @@ export default function GallerySection() {
           {galleryImages.map(({ src, alt }, idx) => (
             <div
               key={idx}
-              className="relative aspect-square overflow-hidden rounded-xl group bg-amber-50"
+              className="relative aspect-square overflow-hidden rounded-xl bg-amber-50"
             >
               <Image
                 src={src}
                 alt={alt}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover"
                 sizes="50vw"
                 loading={idx < 2 ? 'eager' : 'lazy'}
               />
@@ -95,7 +94,6 @@ export default function GallerySection() {
           ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center mt-12">
           <Link
             href="/gallery"

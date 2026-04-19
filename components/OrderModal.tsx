@@ -72,17 +72,64 @@ export default function OrderModal({ onClose }: OrderModalProps) {
 
         {/* Options */}
         <div className="p-4 space-y-3">
-          {/* Toast — Pickup only */}
+          {/* Phone — Primary CTA */}
+          <a
+            href={siteConfig.phoneHref}
+            onClick={onClose}
+            className="group flex items-center gap-4 w-full bg-brand-gold hover:bg-brand-gold-dark text-brand-dark rounded-2xl p-5 transition-all duration-200 hover:shadow-xl hover:shadow-brand-gold/30 hover:scale-[1.01] active:scale-[0.99]"
+          >
+            <div className="w-11 h-11 rounded-xl bg-brand-dark/10 group-hover:bg-brand-dark/20 flex items-center justify-center flex-shrink-0 transition-colors">
+              <svg
+                className="w-5 h-5 text-brand-dark"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.8}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                />
+              </svg>
+            </div>
+            <div className="flex-1 text-left">
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className="font-poppins font-bold text-base text-brand-dark">
+                  {t.orderModal.callLabel}
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-brand-dark/15 text-brand-dark px-1.5 py-0.5 rounded-md">
+                  Fastest
+                </span>
+              </div>
+              <div className="text-brand-dark/60 text-sm font-semibold">
+                {siteConfig.phone}
+              </div>
+            </div>
+            <svg
+              className="w-4 h-4 text-brand-dark/50 group-hover:text-brand-dark group-hover:translate-x-0.5 transition-all"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+
+          {/* Toast — Pickup */}
           <a
             href={siteConfig.toastLink}
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            className="group flex items-center gap-4 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-gold/40 text-white rounded-2xl p-5 transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
+            className="group flex items-center gap-4 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white rounded-2xl p-5 transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
           >
-            <div className="w-11 h-11 rounded-xl bg-brand-gold/10 group-hover:bg-brand-gold/20 flex items-center justify-center flex-shrink-0 transition-colors">
+            <div className="w-11 h-11 rounded-xl bg-white/10 group-hover:bg-white/15 flex items-center justify-center flex-shrink-0 transition-colors">
               <svg
-                className="w-5 h-5 text-brand-gold"
+                className="w-5 h-5 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -101,7 +148,7 @@ export default function OrderModal({ onClose }: OrderModalProps) {
                 <span className="font-poppins font-bold text-base text-white">
                   {t.orderModal.toastLabel}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-brand-gold text-brand-dark px-1.5 py-0.5 rounded-md">
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-white/15 text-gray-300 px-1.5 py-0.5 rounded-md">
                   Pickup
                 </span>
               </div>
@@ -110,18 +157,14 @@ export default function OrderModal({ onClose }: OrderModalProps) {
               </div>
             </div>
             <svg
-              className="w-4 h-4 text-gray-600 group-hover:text-brand-gold group-hover:translate-x-0.5 transition-all"
+              className="w-4 h-4 text-gray-600 group-hover:text-white group-hover:translate-x-0.5 transition-all"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2.5}
               aria-hidden="true"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
           </a>
 
@@ -131,9 +174,9 @@ export default function OrderModal({ onClose }: OrderModalProps) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            className="group flex items-center gap-4 w-full bg-brand-red hover:bg-brand-red-dark text-white rounded-2xl p-5 transition-all duration-200 hover:shadow-xl hover:shadow-brand-red/25 hover:scale-[1.01] active:scale-[0.99]"
+            className="group flex items-center gap-4 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white rounded-2xl p-5 transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
           >
-            <div className="w-11 h-11 rounded-xl bg-white/10 group-hover:bg-white/20 flex items-center justify-center flex-shrink-0 transition-colors">
+            <div className="w-11 h-11 rounded-xl bg-white/10 group-hover:bg-white/15 flex items-center justify-center flex-shrink-0 transition-colors">
               <svg
                 className="w-5 h-5 text-white"
                 fill="none"
@@ -152,73 +195,23 @@ export default function OrderModal({ onClose }: OrderModalProps) {
             <div className="flex-1 text-left">
               <div className="flex items-center gap-2 mb-0.5">
                 <span className="font-poppins font-bold text-base">{t.orderModal.doordashLabel}</span>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white px-1.5 py-0.5 rounded-md">
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-white/15 text-gray-300 px-1.5 py-0.5 rounded-md">
                   Delivery
                 </span>
               </div>
-              <div className="text-pink-200 group-hover:text-white/80 text-sm transition-colors">
+              <div className="text-gray-400 group-hover:text-gray-300 text-sm transition-colors">
                 {t.orderModal.doordashSub}
               </div>
             </div>
             <svg
-              className="w-4 h-4 text-pink-300 group-hover:text-white group-hover:translate-x-0.5 transition-all"
+              className="w-4 h-4 text-gray-600 group-hover:text-white group-hover:translate-x-0.5 transition-all"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2.5}
               aria-hidden="true"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
-            </svg>
-          </a>
-
-          {/* Phone */}
-          <a
-            href={siteConfig.phoneHref}
-            onClick={onClose}
-            className="group flex items-center gap-4 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-gold/40 rounded-2xl p-5 transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
-          >
-            <div className="w-11 h-11 rounded-xl bg-brand-gold/10 group-hover:bg-brand-gold/20 flex items-center justify-center flex-shrink-0 transition-colors">
-              <svg
-                className="w-5 h-5 text-brand-gold"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1.8}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
-                />
-              </svg>
-            </div>
-            <div className="flex-1 text-left">
-              <div className="font-poppins font-bold text-base text-white">
-                {t.orderModal.callLabel}
-              </div>
-              <div className="text-gray-400 group-hover:text-gray-300 text-sm transition-colors">
-                {siteConfig.phone}
-              </div>
-            </div>
-            <svg
-              className="w-4 h-4 text-gray-600 group-hover:text-brand-gold group-hover:translate-x-0.5 transition-all"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
           </a>
         </div>

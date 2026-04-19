@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --brand-red: #E8232A;
-  --brand-gold: #F5A800;
-  --brand-orange: #F06830;
+  --brand-red: #d01077;
+  --brand-gold: #f9ac01;
+  --brand-orange: #eb772f;
   --brand-dark: #1A1A1A;
-  --brand-cream: #FFFBF5;
-  --brand-muted: #F7F3EE;
+  --brand-cream: #ffffff;
+  --brand-muted: #fdf5fb;
 }
 
 html {
