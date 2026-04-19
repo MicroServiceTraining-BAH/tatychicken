@@ -167,103 +167,18 @@ const t = {
       categoriesAriaLabel: 'Menu categories',
       categories: {
         all: 'All Items',
+        appetizers: 'Appetizers',
         chicken: 'Chicken',
-        combos: 'Combos',
-        sides: 'Sides',
+        handhelds: 'Handhelds',
+        specialty: 'Specialty Plates',
+        seafood: 'Seafood',
+        soups: 'Soups',
+        chifa: 'Chifa',
+        shareables: 'Shareables',
+        desserts: 'Desserts',
         drinks: 'Drinks',
-        specials: 'Specials',
       },
-      items: {
-        'whole-chicken': {
-          name: 'Whole Chicken',
-          description: 'Seasoned and fried whole bird. Golden, juicy, and packed with flavor.',
-        },
-        'half-chicken': {
-          name: 'Half Chicken',
-          description: 'Half bird, crispy on the outside, juicy on the inside. Served hot.',
-        },
-        'quarter-breast': {
-          name: 'Quarter Chicken (Breast)',
-          description: 'Crispy golden breast quarter, the crowd favorite cut.',
-        },
-        'quarter-leg': {
-          name: 'Quarter Chicken (Leg & Thigh)',
-          description: 'Tender, flavorful leg and thigh quarter with signature seasoning.',
-        },
-        'strip-meal': {
-          name: '3-Piece Strip Meal',
-          description: 'Three golden chicken strips with your choice of one side and a drink.',
-        },
-        'wing-combo': {
-          name: 'Wing Combo (6 pc)',
-          description: 'Six crispy wings seasoned to perfection, served with one side.',
-        },
-        'classic-combo': {
-          name: 'Classic Combo',
-          description: '2 pieces of our signature fried chicken, crispy fries, and a drink.',
-        },
-        'big-combo': {
-          name: 'Big Combo',
-          description: '3 pieces of chicken, two sides of your choice, and a drink.',
-        },
-        'family-feast': {
-          name: 'Family Feast',
-          description: '8 pieces of chicken, 2 large sides, and 4 drinks. Feed the whole family.',
-        },
-        'latin-spicy-box': {
-          name: 'Latin Spicy Box',
-          description: 'Spicy marinated chicken, Latin-style rice & beans, and sweet fried plantains.',
-        },
-        fries: {
-          name: 'French Fries',
-          description: 'Golden, crispy fries. Seasoned and perfectly salted.',
-        },
-        'rice-beans': {
-          name: 'Rice & Beans',
-          description: 'Authentic Latin-style rice and beans, a true comfort classic.',
-        },
-        'mac-cheese': {
-          name: 'Macaroni & Cheese',
-          description: "Creamy, rich mac & cheese made in-house. Kids love it.",
-        },
-        coleslaw: {
-          name: 'Coleslaw',
-          description: 'Cool, creamy coleslaw. The perfect balance to crispy chicken.',
-        },
-        plantains: {
-          name: 'Fried Plantains',
-          description: "Sweet and crispy maduros, a Latin staple you can't skip.",
-        },
-        corn: {
-          name: 'Corn on the Cob',
-          description: 'Buttered corn on the cob. Simple, sweet, and satisfying.',
-        },
-        soda: {
-          name: 'Soda (Can)',
-          description: 'Coke, Sprite, or your choice of canned soda.',
-        },
-        water: {
-          name: 'Bottled Water',
-          description: 'Cold, refreshing bottled water.',
-        },
-        lemonade: {
-          name: 'Fresh Lemonade',
-          description: 'Freshly squeezed lemonade. Sweet, tart, and ice cold.',
-        },
-        'agua-fresca': {
-          name: 'Agua Fresca',
-          description: "House-made agua fresca. Ask about today's flavor.",
-        },
-        'daily-special': {
-          name: 'Daily Special',
-          description: 'Ask about our rotating daily deals. Always fresh, always a great value.',
-        },
-        catering: {
-          name: 'Catering Packages',
-          description:
-            'Feed your event right. Custom packages available for any size group. Call to plan.',
-        },
-      },
+      items: {},
     },
     footer: {
       description:
@@ -510,103 +425,18 @@ const t = {
       categoriesAriaLabel: 'Categorías del menú',
       categories: {
         all: 'Todo el Menú',
+        appetizers: 'Entradas',
         chicken: 'Pollo',
-        combos: 'Combos',
-        sides: 'Acompañantes',
+        handhelds: 'Sándwiches',
+        specialty: 'Platos Especiales',
+        seafood: 'Mariscos',
+        soups: 'Sopas',
+        chifa: 'Chifa',
+        shareables: 'Para Compartir',
+        desserts: 'Postres',
         drinks: 'Bebidas',
-        specials: 'Especiales',
       },
-      items: {
-        'whole-chicken': {
-          name: 'Pollo Entero',
-          description: 'Pollo entero sazonado y frito. Dorado, jugoso y lleno de sabor.',
-        },
-        'half-chicken': {
-          name: 'Medio Pollo',
-          description: 'Mitad de pollo, crujiente por fuera, jugoso por dentro. Servido caliente.',
-        },
-        'quarter-breast': {
-          name: 'Cuarto de Pollo (Pecho)',
-          description: 'Cuarto de pecho crujiente y dorado, el corte favorito.',
-        },
-        'quarter-leg': {
-          name: 'Cuarto de Pollo (Pierna y Muslo)',
-          description: 'Tierno y sabroso cuarto de pierna y muslo con sazón especial.',
-        },
-        'strip-meal': {
-          name: 'Meal de 3 Tiras',
-          description: 'Tres tiras de pollo doradas con tu elección de un acompañante y una bebida.',
-        },
-        'wing-combo': {
-          name: 'Combo de Alitas (6 pzas)',
-          description: 'Seis alitas crujientes sazonadas a la perfección, servidas con un acompañante.',
-        },
-        'classic-combo': {
-          name: 'Combo Clásico',
-          description: '2 piezas de nuestro pollo frito especial, papas crujientes y una bebida.',
-        },
-        'big-combo': {
-          name: 'Combo Grande',
-          description: '3 piezas de pollo, dos acompañantes a tu elección y una bebida.',
-        },
-        'family-feast': {
-          name: 'Festín Familiar',
-          description: '8 piezas de pollo, 2 acompañantes grandes y 4 bebidas. Alimenta a toda la familia.',
-        },
-        'latin-spicy-box': {
-          name: 'Caja Picante Latina',
-          description: 'Pollo marinado picante, arroz con frijoles al estilo latino y dulces tostones.',
-        },
-        fries: {
-          name: 'Papas Fritas',
-          description: 'Papas doradas y crujientes. Sazonadas y perfectamente saladas.',
-        },
-        'rice-beans': {
-          name: 'Arroz con Frijoles',
-          description: 'Arroz y frijoles auténticos al estilo latino, un clásico reconfortante.',
-        },
-        'mac-cheese': {
-          name: 'Macarrones con Queso',
-          description: 'Mac & cheese cremoso y rico, hecho en casa. ¡A los niños les encanta!',
-        },
-        coleslaw: {
-          name: 'Ensalada Coleslaw',
-          description: 'Coleslaw fresco y cremoso. El complemento perfecto para el pollo crujiente.',
-        },
-        plantains: {
-          name: 'Tostones / Maduros',
-          description: 'Maduros dulces y crujientes, un clásico latino que no te puedes perder.',
-        },
-        corn: {
-          name: 'Elote en Mazorca',
-          description: 'Elote con mantequilla. Sencillo, dulce y satisfactorio.',
-        },
-        soda: {
-          name: 'Refresco (Lata)',
-          description: 'Coca-Cola, Sprite o tu refresco de lata favorito.',
-        },
-        water: {
-          name: 'Agua Embotellada',
-          description: 'Agua embotellada fría y refrescante.',
-        },
-        lemonade: {
-          name: 'Limonada Fresca',
-          description: 'Limonada recién exprimida. Dulce, ácida y bien fría.',
-        },
-        'agua-fresca': {
-          name: 'Agua Fresca',
-          description: 'Agua fresca hecha en casa. Pregunta por el sabor del día.',
-        },
-        'daily-special': {
-          name: 'Especial del Día',
-          description: 'Pregunta por nuestras ofertas diarias. Siempre frescas, siempre un gran valor.',
-        },
-        catering: {
-          name: 'Paquetes de Catering',
-          description:
-            'Alimenta tu evento bien. Paquetes personalizados para grupos de cualquier tamaño. Llama para planificar.',
-        },
-      },
+      items: {},
     },
     footer: {
       description:
