@@ -7,7 +7,7 @@ import Reveal from '@/components/Reveal';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    "Learn the story behind Taty's Chicken . A family-owned Latin fried chicken restaurant built on bold flavors, quality ingredients, and community.",
+    "Learn the story behind Taty's Chicken. A family-owned Peruvian restaurant in Manassas, VA, born from a passion for sharing authentic Peruvian flavors with the DMV community.",
 };
 
 export default function AboutPage() {

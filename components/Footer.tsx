@@ -21,6 +21,14 @@ function FacebookIcon() {
   );
 }
 
+function TikTokIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z" />
+    </svg>
+  );
+}
+
 export default function Footer() {
   const { t } = useLanguage();
 
@@ -76,6 +84,15 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-200"
               >
                 <FacebookIcon />
+              </a>
+              <a
+                href={siteConfig.tiktokLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="w-9 h-9 rounded-full bg-black flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-black/30 transition-all duration-200"
+              >
+                <TikTokIcon />
               </a>
             </div>
 
@@ -145,6 +162,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <a href={siteConfig.instagramLink} target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors">Instagram</a>
             <a href={siteConfig.facebookLink} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">Facebook</a>
+            <a href={siteConfig.tiktokLink} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">TikTok</a>
             <a href={siteConfig.doordashLink} target="_blank" rel="noopener noreferrer" className="hover:text-red-400 transition-colors">DoorDash</a>
           </div>
           <p>

@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 
 export const siteConfig = {
   name: "Taty's Chicken",
-  tagline: 'Crispy Latin-Style Fried Chicken',
+  tagline: 'Authentic Peruvian Cuisine in Manassas, VA',
   description:
-    "Taty's Chicken in Manassas, VA. Crispy, Latin-inspired fried chicken made fresh daily. Fast service, family portions, authentic flavor. Order now on DoorDash or visit us today.",
+    "Taty's Chicken — authentic Peruvian cuisine in Manassas, VA. Pollo a la Brasa, ceviche, lomo saltado, and more, made fresh daily. Proudly serving the DMV area. Order on DoorDash or visit us today.",
   url: 'https://tatyschicken.com',
   phone: '(571) 379-7421',
   phoneHref: 'tel:+15713797421',
-  address: '10768 Sudley Manor Dr., Manassas, VA 20109',
+  address: '10768 Sudley Manor Dr, Manassas, VA 20109',
   hours: {
     weekdays: 'Mon–Thu: 11am–8/9pm · Fri–Sat: 9/11am–10pm',
     weekend: 'Sun: 9am – 8pm',
@@ -16,6 +16,7 @@ export const siteConfig = {
   doordashLink:
     "https://www.doordash.com/store/taty's-chicken-manassas-26346203/57620347/?cursor=eyJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsNCwxNzUsMTc2LDE3NywxNzksMTkzLDE5NSwyODRdfQ==&pickup=false",
   toastLink: 'https://order.toasttab.com/online/tatys-chicken-10768-sudley-manor-drive',
+  tiktokLink: 'https://www.tiktok.com/@tatys.chicken',
   instagramLink: 'https://www.instagram.com/tatys.chicken?igsh=dzBod2VjMm9tc2ty',
   facebookLink:
     'https://www.facebook.com/tatyschicken?mibextid=wwXIfr&rdid=VScPzJol5J6LHibx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AMmRVy9jo%2F%3Fmibextid%3DwwXIfr',
@@ -34,17 +35,18 @@ export const baseMetadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    'fried chicken near me',
-    'best fried chicken Manassas VA',
-    'Latin fried chicken',
-    'chicken combos',
-    'family meals',
-    'crispy chicken',
-    'chicken restaurant Manassas',
     "Taty's Chicken",
-    'affordable chicken',
-    'DoorDash chicken delivery',
-    'takeout chicken Virginia',
+    'Peruvian restaurant Manassas VA',
+    'pollo a la brasa Manassas',
+    'ceviche near me Virginia',
+    'lomo saltado DMV',
+    'Peruvian food DMV',
+    'authentic Peruvian cuisine Virginia',
+    'fried chicken Manassas',
+    'Latin restaurant Manassas VA',
+    'chicken restaurant near me',
+    'DoorDash delivery Manassas',
+    'Peruvian takeout Virginia',
   ],
   openGraph: {
     type: 'website',

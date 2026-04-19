@@ -444,6 +444,16 @@ export const menuItems: MenuItem[] = [
     note: 'Cooked to order',
   },
 
+  {
+    id: 'choros-chalaca',
+    name: 'Choros a la Chalaca',
+    description: 'Fresh mussels on the half shell topped with a vibrant Peruvian salsa of tomatoes, onions, lime, cilantro, and aji amarillo. A coastal classic.',
+    price: '$16.00',
+    category: 'seafood',
+    popular: true,
+    note: 'Cooked to order',
+  },
+
   // SOUPS
   {
     id: 'parihuela',
@@ -511,6 +521,22 @@ export const menuItems: MenuItem[] = [
     price: '$22.00',
     category: 'chifa',
     popular: true,
+    note: 'Cooked to order',
+  },
+  {
+    id: 'chijaukay',
+    name: 'Chijaukay',
+    description: 'Peruvian-Chinese style fried chicken pieces in a savory soy-based sauce with peppers and aromatic spices.',
+    price: '$18.00',
+    category: 'chifa',
+    note: 'Cooked to order',
+  },
+  {
+    id: 'tipakay',
+    name: 'Tipakay',
+    description: 'Sweet and sour Peruvian-Chinese chicken — tender pieces tossed in a vibrant sweet and sour sauce with pineapple and peppers.',
+    price: '$18.00',
+    category: 'chifa',
     note: 'Cooked to order',
   },
   {
