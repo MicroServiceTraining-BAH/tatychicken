@@ -257,6 +257,18 @@ const t = {
       callSub: 'Speak with us directly',
       close: 'Close',
     },
+    reviews: {
+      eyebrow: 'Google Reviews',
+      heading: 'What People Are Saying',
+      reviewCount: 'reviews',
+    },
+    pdfMenu: {
+      eyebrow: 'Visual Menu',
+      heading: 'Prefer the Printable Menu?',
+      body: 'Download our full menu PDF to browse every dish at your own pace — great for catering inquiries or sharing with friends.',
+      downloadBtn: 'Download Menu PDF',
+      openBtn: 'Open in Browser',
+    },
   },
   es: {
     nav: {
@@ -436,7 +448,328 @@ const t = {
         desserts: 'Postres',
         drinks: 'Bebidas',
       },
-      items: {},
+      items: {
+        'papa-rellena': {
+          name: 'Papa Rellena',
+          description: 'Papa dorada y crujiente rellena de carne molida sazonada, cebollas, aceitunas y huevo sancochado. Servida con nuestra salsa criolla.',
+        },
+        'salchipapa': {
+          name: 'Salchipapa',
+          description: 'Salchichas de res en rodajas finas salteadas, mezcladas con papas fritas. Servida con ketchup, mayonesa y mostaza.',
+        },
+        'yuca-frita': {
+          name: 'Yuca Frita',
+          description: 'Trozos de yuca sancochada, fritos a la perfección y servidos con salsa huancaína.',
+        },
+        'papa-huancaina': {
+          name: 'Papa a la Huancaína',
+          description: 'Gruesas rodajas de papa al vapor bañadas en salsa huancaína de queso fresco y ají, decoradas con huevo y queso.',
+        },
+        'causa-pollo': {
+          name: 'Causa de Pollo',
+          description: 'Pastel de papa amarilla con ají amarillo, relleno con ensalada de pollo estilo peruano.',
+        },
+        'tamal': {
+          name: 'Tamal de Pollo o Chancho',
+          description: 'Masa de maíz envuelta en hoja de plátano, rellena con tiras de pollo o cerdo.',
+        },
+        'chicharron-carretillero': {
+          name: 'Chicharrón Carretillero',
+          description: 'Trozos de cerdo deshuesado fritos hasta lograr una textura dorada y crujiente. Servido con yuca y nuestra sarza criolla.',
+        },
+        'chicken-wings': {
+          name: 'Alitas Signature de Taty\'s',
+          description: 'Alitas bañadas en la salsa de tu elección: Buffalo, Limón Pimienta, Mambo, Old Bay o Hot Honey.',
+        },
+        'quarter-chicken': {
+          name: 'Cuarto de Pollo (Pollo a la Brasa)',
+          description: 'Pechuga o pierna. Servido con dos porciones medianas.',
+        },
+        'half-chicken': {
+          name: 'Medio Pollo (Pollo a la Brasa)',
+          description: 'Pechuga y pierna. Servido con dos porciones medianas.',
+        },
+        'whole-chicken': {
+          name: 'Pollo Entero (Pollo a la Brasa)',
+          description: 'Pollo a la brasa entero con dos porciones grandes. Solo pechuga +$3, solo pierna +$2.',
+        },
+        '2pc-fried-chicken': {
+          name: '2 Piezas de Pollo Frito',
+          description: 'Dos piezas de pollo frito crujiente con dos porciones medianas.',
+        },
+        '4pc-fried-chicken': {
+          name: '4 Piezas de Pollo Frito',
+          description: 'Cuatro piezas de pollo frito crujiente con dos porciones medianas.',
+        },
+        'broaster-wings': {
+          name: '3 Alitas Broaster Crujientes',
+          description: 'Tres alitas broaster crujientes servidas con papas fritas.',
+        },
+        'butifarra': {
+          name: 'Sándwich de Butifarra',
+          description: 'Un clásico peruano. Relleno con jamón del país en rodajas, cebolla y sarza criolla.',
+        },
+        'pan-con-chicharron': {
+          name: 'Sándwich de Chicharrón',
+          description: 'Pan con chicharrón estilo peruano: panceta de cerdo con sarza criolla y camote frito.',
+        },
+        'lomo-saltado-sandwich': {
+          name: 'Sándwich de Lomo Saltado',
+          description: 'Tiernas tiras de lomo saltado con cebollas, tomates y especias en pan recién horneado.',
+        },
+        'royal-burger': {
+          name: 'Royal Burger',
+          description: 'Nuestra hamburguesa estilo peruano con jamón, tocino, queso y huevo frito.',
+        },
+        'street-burger': {
+          name: 'Street Burger',
+          description: 'Hamburguesa artesanal de carne, salchicha frita, papas chips y nuestra salsa secreta.',
+        },
+        'hot-crispy-sandwich': {
+          name: 'Sándwich Hot Crispy de Taty\'s',
+          description: '3 ajíes peruanos, mayonesa de la casa, lechuga y tomate. Viene con papas fritas.',
+        },
+        'buffalo-ranch-sandwich': {
+          name: 'Sándwich Crispy Buffalo Ranch',
+          description: 'Salsa buffalo cremosa, mayonesa de la casa, lechuga y tomate. Viene con papas fritas.',
+        },
+        'mambo-sandwich': {
+          name: 'Sándwich Crispy Mambo',
+          description: 'Salsa mambo, mayonesa de la casa, lechuga y tomate. Viene con papas fritas.',
+        },
+        'hot-honey-sandwich': {
+          name: 'Sándwich Crispy Hot Honey',
+          description: 'Salsa hot honey, mayonesa de la casa, lechuga y tomate. Viene con papas fritas.',
+        },
+        'brasa-sandwich': {
+          name: 'Sándwich de Pollo a la Brasa',
+          description: 'Pollo a la brasa deshilachado, apio, mayonesa de la casa, lechuga y tomate. Viene con papas fritas.',
+        },
+        'tatys-chicken-sandwich': {
+          name: 'Sándwich de Pollo de Taty\'s',
+          description: 'Pollo crujiente, coleslaw, ajíes en vinagre y salsa secreta. Viene con papas fritas.',
+        },
+        'chicken-wrap': {
+          name: 'Wrap de Pollo de Taty\'s',
+          description: 'Frijoles, arroz, salsa amarilla, pollo a la brasa deshilachado y plátano.',
+        },
+        'philly-cheese': {
+          name: 'Sándwich Philly Cheese de Pollo',
+          description: 'Pollo, cebollas, ají verde, lechuga, tomate, mayonesa y papas fritas.',
+        },
+        'lomo-saltado': {
+          name: 'Lomo Saltado',
+          description: 'Tiernas láminas de lomo sellado con cebollas, tomates jugosos y papas fritas en este clásico salteado chino-peruano.',
+        },
+        'seco-cordero': {
+          name: 'Seco de Cordero',
+          description: 'Jugoso pernil de cordero braseado en guiso de cilantro, servido con frijoles canarios cremosos y arroz blanco.',
+        },
+        'tallarines-verdes': {
+          name: 'Tallarines Verdes con Bistec',
+          description: 'Linguini estilo peruano al dente cubierto con salsa pesto caliente, servido con bistec tierno.',
+        },
+        'churrasco': {
+          name: 'Churrasco a lo Pobre',
+          description: 'Churrasco a lo pobre: bistec con huevo, arroz, plátanos dulces y papas fritas — ¡una combinación inesperada que debes probar!',
+        },
+        'tallarin-saltado': {
+          name: 'Tallarín Saltado',
+          description: 'Salteado peruano de pollo y fideos con ingredientes locales e influencia asiática. Agrega carne o camarones +$5.',
+        },
+        'arroz-con-pollo': {
+          name: 'Arroz con Pollo',
+          description: 'Arroz de cilantro tradicional peruano servido con una pieza de pollo y salsa huancaína cremosa. Agrega ceviche +$10.',
+        },
+        'aji-de-gallina': {
+          name: 'Ají de Gallina',
+          description: 'Pollo deshilachado en salsa cremosa y picante de ají amarillo, nueces y queso. Servido con arroz, papas, huevo y aceitunas.',
+        },
+        'tallarines-huancaina-lomo': {
+          name: 'Tallarines a la Huancaína con Lomo',
+          description: 'Linguini en salsa huancaína cremosa (ají amarillo y queso fresco) servido con lomo saltado.',
+        },
+        'arroz-chaufa': {
+          name: 'Arroz Chaufa',
+          description: 'Arroz frito de pollo con ingredientes aromáticos frescos y especias asiáticas. Agrega carne o camarones +$5.',
+        },
+        'anticucho': {
+          name: 'Anticucho',
+          description: 'Trozos de corazón de res marinado en palitos, servidos con choclo y papas a la brasa. Agrega tripa a la brasa +$5.',
+        },
+        'tacu-tacu-pobre': {
+          name: 'Tacu Tacu a lo Pobre',
+          description: 'Sabroso bistec cubierto con huevo frito, servido con plátanos fritos y torta de arroz con frijoles canarios.',
+        },
+        'tacu-tacu-mariscos': {
+          name: 'Tacu Tacu en Salsa de Mariscos',
+          description: 'Tacu tacu en salsa de mariscos estilo peruano.',
+        },
+        'tacu-tacu-lomo': {
+          name: 'Tacu Tacu a lo Pobre con Lomo Saltado',
+          description: 'Tacu tacu con nuestro auténtico lomo saltado.',
+        },
+        'ceviche-pescado': {
+          name: 'Ceviche de Pescado',
+          description: 'Pescado fresco marinado en limón, especias y hierbas peruanas, servido con camote glaseado, choclo y cancha.',
+        },
+        'ceviche-mixto': {
+          name: 'Ceviche Mixto',
+          description: 'Pescado, mejillones, calamar y camarones marinados en limón con especias peruanas. Servido con camote, choclo y cancha.',
+        },
+        'leche-tigre': {
+          name: 'Leche de Tigre',
+          description: 'Jugo de limón, cebollas, ajíes, sal y pimienta con un poco de pescado y jugo de camarones servido en vaso. ¡Cura la resaca y es afrodisíaco!',
+        },
+        'duo-marino': {
+          name: 'Dúo Marino',
+          description: 'Arroz con mariscos y ceviche acompañados de choclo, camote y salsa tártara.',
+        },
+        'trio-marino': {
+          name: 'Trío Marino',
+          description: 'Arroz con mariscos, pescado frito y ceviche acompañados de choclo, camote y salsa tártara.',
+        },
+        'arroz-mariscos': {
+          name: 'Arroz con Mariscos',
+          description: 'Paella peruana. Salsa cremosa de ají amarillo con camarones, calamar, mejillones, pimientos rojos y cilantro aromático.',
+        },
+        'causa-acevichada': {
+          name: 'Causa Acevichada',
+          description: 'Pastel de papa con ají amarillo relleno de aguacate fresco y mayonesa, coronado con nuestro ceviche tradicional.',
+        },
+        'chicharron-pescado': {
+          name: 'Chicharrón de Pescado',
+          description: 'Trozos de pescado fritos servidos con ensalada de cebolla y yuca frita.',
+        },
+        'chicharron-calamar': {
+          name: 'Chicharrón de Calamar',
+          description: 'Calamar sazonado frito hasta dorarse, servido con yuca frita o papas y nuestra salsa signature.',
+        },
+        'jalea-mixta': {
+          name: 'Jalea Mixta',
+          description: 'Combinación de mariscos fritos: camarones, calamar, vieiras y pescado, servidos con ensalada de cebolla y yuca frita.',
+        },
+        'pescado-macho': {
+          name: 'Pescado a lo Macho',
+          description: 'Filete de pescado frito cubierto con una mezcla jugosa de mariscos y salsa especial, servido con arroz y papas crujientes.',
+        },
+        'choros-chalaca': {
+          name: 'Choros a la Chalaca',
+          description: 'Mejillones frescos en media concha cubiertos con salsa peruana de tomates, cebollas, limón, cilantro y ají amarillo. Un clásico costeño.',
+        },
+        'parihuela': {
+          name: 'Parihuela',
+          description: 'La sopa costera más tradicional del Perú. Combinación perfecta de los mariscos más frescos con especias peruanas — consomé de pescado con cangrejos, mejillones, calamar, almejas y camarones.',
+        },
+        'sudado-pescado': {
+          name: 'Sudado de Pescado',
+          description: 'Pescado al vapor cocido en fondo de pescado, cebolla, ají amarillo y ajíes panca. Servido con arroz blanco.',
+        },
+        'chupe-camarones': {
+          name: 'Chupe de Camarones',
+          description: 'Camarones frescos en caldo cremoso con arroz, papas, arvejas, choclo, queso, leche y huevo pochado. Coronado con hierbas frescas.',
+        },
+        'caldo-gallina': {
+          name: 'Caldo de Gallina',
+          description: 'Sopa reconfortante con gallina tierna, fideos, papas y huevo sancochado en caldo sabroso. ¡El sabor auténtico del Perú! Agrega gallina acevichada +$2.',
+        },
+        'aeropuerto': {
+          name: 'Aeropuerto',
+          description: 'Plato chifa de arroz chaufa con fideos salteados mezclados al final, resultando en un plato frito con tallarines.',
+        },
+        'sopa-wonton': {
+          name: 'Sopa Wonton Especial',
+          description: 'Sopa wonton estilo peruano con cerdo, camarones y pollo.',
+        },
+        'tallarin-oriental': {
+          name: 'Tallarín Saltado Oriental',
+          description: 'Fideos salteados estilo peruano.',
+        },
+        'kam-lu-wantan': {
+          name: 'Kam Lu Wantán',
+          description: 'Salteado chino-peruano con wantanes crujientes, pollo, cerdo, camarones, verduras, piña y durazno en salsa agridulce.',
+        },
+        'chijaukay': {
+          name: 'Chijaukai',
+          description: 'Pollo frito estilo chino-peruano en salsa sabrosa de soya con pimientos y especias aromáticas.',
+        },
+        'tipakay': {
+          name: 'Tipakay',
+          description: 'Pollo chino-peruano agridulce — trozos tiernos bañados en salsa agridulce vibrante con piña y pimientos.',
+        },
+        'navo-encurtido': {
+          name: 'Navo Encurtido',
+          description: 'Nabo encurtido, clásico acompañante chino-peruano.',
+        },
+        'fiesta-marina': {
+          name: 'Fiesta Marina',
+          description: 'Ceviche de Pescado, Arroz con Mariscos, Chicharrón de Pescado, Causa de Langostino, Leche de Tigre.',
+        },
+        'parrillada-tatys': {
+          name: 'Parrillada Taty\'s',
+          description: 'Chuleta de Cerdo, Bistec de Res, 1/4 de Pollo a la Brasa, 1 Chorizo, 1 Palo de Anticucho, Porción de Papas, Porción de Choclo.',
+        },
+        'desayuno-lurin': {
+          name: 'Desayuno Lurín',
+          description: 'Chicharrón, Porción de Camote, Tamal de Pollo o Chancho, Sarza Criolla, Salchicha Huachana, Pan.',
+        },
+        'tatys-broaster': {
+          name: 'Taty\'s Broaster',
+          description: 'Ocho piezas de pollo frito crujiente servidas con papas fritas, salchicha, ensalada fresca y salsas variadas.',
+        },
+        'jalea-galactica': {
+          name: 'Jalea Galáctica',
+          description: '2 Pescados Enteros, 2 Filetes de Pescado, Chicharrón de Pescado, Mariscos Mixtos, Yuca Frita, Sarza Criolla.',
+        },
+        'ceviche-galactico': {
+          name: 'Ceviche Galáctico',
+          description: 'Ceviche de Pescado Fresco, Mariscos Mixtos, Calamar Crocante, Yuca Frita, Cancha, Camote.',
+        },
+        'tres-leches': {
+          name: 'Tres Leches',
+          description: 'Clásico bizcocho peruano empapado en tres tipos de leche.',
+        },
+        'torta-chocolate': {
+          name: 'Torta de Chocolate',
+          description: 'Torta de chocolate rica y decadente.',
+        },
+        'crema-volteada': {
+          name: 'Crema Volteada',
+          description: 'Flan estilo peruano, suave y cremoso con caramelo.',
+        },
+        'chocoflan': {
+          name: 'Chocoflan',
+          description: 'La combinación perfecta de torta de chocolate y flan en un solo postre.',
+        },
+        'alfajores': {
+          name: 'Alfajores',
+          description: 'Tradicionales galletas peruanas rellenas de dulce de leche.',
+        },
+        'cuchareable': {
+          name: 'Cuchareable',
+          description: 'Pregunta por el sabor del día.',
+        },
+        'house-drinks': {
+          name: 'De la Casa',
+          description: 'Chicha Morada, Maracuyá u Horchata.',
+        },
+        'lemonade': {
+          name: 'Limonada',
+          description: 'Mango, durazno, piña, maracuyá o fresa.',
+        },
+        'can-soda': {
+          name: 'Gaseosa en Lata',
+          description: 'Productos Coca-Cola.',
+        },
+        'bottled-soda': {
+          name: 'Gaseosa en Botella',
+          description: 'Productos Coca-Cola.',
+        },
+        'inca-kola': {
+          name: 'Inca Kola 2 Lts',
+          description: 'La gaseosa dorada del Perú.',
+        },
+      },
     },
     footer: {
       description:
@@ -517,6 +850,18 @@ const t = {
       callLabel: 'Llamar para Ordenar',
       callSub: 'Habla con nosotros directamente',
       close: 'Cerrar',
+    },
+    reviews: {
+      eyebrow: 'Reseñas de Google',
+      heading: 'Lo que Dice la Gente',
+      reviewCount: 'reseñas',
+    },
+    pdfMenu: {
+      eyebrow: 'Menú Visual',
+      heading: '¿Prefieres el Menú Imprimible?',
+      body: 'Descarga el PDF de nuestro menú completo para explorar cada plato a tu ritmo — ideal para consultas de catering o compartir con amigos.',
+      downloadBtn: 'Descargar Menú PDF',
+      openBtn: 'Abrir en el Navegador',
     },
   },
 } as const;

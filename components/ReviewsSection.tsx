@@ -1,5 +1,7 @@
 'use client';
 
+import { useLanguage } from '@/lib/language-context';
+
 type Review = {
   name: string;
   text: string;
@@ -87,21 +89,22 @@ function GoogleIcon() {
 }
 
 export default function ReviewsSection() {
+  const { t } = useLanguage();
   const doubled = [...REVIEWS, ...REVIEWS];
 
   return (
     <section className="py-16 bg-brand-dark overflow-hidden" aria-labelledby="reviews-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
         <p className="text-brand-gold font-semibold text-sm uppercase tracking-widest mb-3">
-          Google Reviews
+          {t.reviews.eyebrow}
         </p>
         <h2 id="reviews-heading" className="section-title text-white mb-2">
-          What People Are Saying
+          {t.reviews.heading}
         </h2>
         <div className="flex items-center justify-center gap-2 mt-3">
           <Stars rating={5} />
           <span className="text-white font-bold text-lg">5.0</span>
-          <span className="text-gray-400 text-sm">· {REVIEWS.length} reviews</span>
+          <span className="text-gray-400 text-sm">· {REVIEWS.length} {t.reviews.reviewCount}</span>
           <GoogleIcon />
         </div>
       </div>

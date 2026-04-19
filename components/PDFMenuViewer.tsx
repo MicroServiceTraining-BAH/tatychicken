@@ -1,21 +1,24 @@
 'use client';
 
+import { useLanguage } from '@/lib/language-context';
+
 export default function PDFMenuViewer() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 md:py-28 bg-brand-dark" aria-labelledby="pdf-menu-heading">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-brand-gold font-semibold text-sm uppercase tracking-widest mb-3">
-          Visual Menu
+          {t.pdfMenu.eyebrow}
         </p>
         <h2
           id="pdf-menu-heading"
           className="font-bebas text-5xl md:text-6xl text-white leading-none tracking-wide mb-4"
         >
-          Prefer the Printable Menu?
+          {t.pdfMenu.heading}
         </h2>
         <p className="text-gray-400 max-w-xl mx-auto mb-10">
-          Download our full menu PDF to browse every dish at your own pace — great for catering
-          inquiries or sharing with friends.
+          {t.pdfMenu.body}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -39,7 +42,7 @@ export default function PDFMenuViewer() {
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Download Menu PDF
+            {t.pdfMenu.downloadBtn}
           </a>
 
           <a
@@ -63,7 +66,7 @@ export default function PDFMenuViewer() {
               <polyline points="15 3 21 3 21 9" />
               <line x1="10" y1="14" x2="21" y2="3" />
             </svg>
-            Open in Browser
+            {t.pdfMenu.openBtn}
           </a>
         </div>
       </div>
